@@ -1,0 +1,150 @@
+
+<h3><%= project.name %></h3>
+
+<% if(project.description){%>
+    <div class="well well-small">
+        <%= project.description %>
+    </div>
+<% } %>
+
+<ul class="nav nav-tabs">
+    <li class="<%= !tab || tab == "payments" ? "active":"" %>"><a href="#payments" data-toggle="tab">Maksete ajalugu</a></li>
+    <li class="<%= tab == "certs" ? "active":"" %>"><a href="#certs" data-toggle="tab">Sertifikaadid</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane <%= !tab || tab == "payments" ? "active":"" %>" id="payments">
+    <% include payment-list %>
+  </div>
+  <div class="tab-pane <%= tab == "certs" ? "active":"" %>" id="certs">
+
+    <table class="table table-bordered">
+
+        <tr>
+            <th>
+                Panga tüüp
+            </th>
+            <td>
+                <%= banks[project.bank].name %>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                Kliendi tunnuskood
+            </th>
+            <td>
+                <code><%= project.uid %></code>
+            </td>
+        </tr>
+
+        <% if(project.authorized && project.authorized.length){%>
+        <tr>
+            <th>
+                Lubatud kasutajad
+            </th>
+            <td>
+                <%= project.authorized.join(", ") %>
+            </td>
+        </tr>
+        <% } %>
+
+        <tr>
+            <th>
+                Pöörduspunkti URL
+            </th>
+            <td>
+                <code>https://<%= hostname %>/banklink/<%= project.bank %></code>
+                <small>Pangalingi aadress makse sooritamiseks</small>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                Sertifikaadi kehtivus
+            </th>
+            <td>
+                <% if(project.userCertificate.expires > new Date()){%>
+                    <i class="icon-ok-sign"></i> kehtib kuni <em><%= project.userCertificate.expires %></em>
+                <% } %>
+
+                <% if(project.userCertificate.expires < new Date()){%>
+                    <i class="icon-exclamation-sign"></i> Sertifikaat on aegunud! <a class="btn btn-mini" href="/project/<%= project._id %>/regenerate" onclick="return confirm('Kas oled kindel, et soovid sertifikaati uuendada?')"><i class="icon-refresh"></i> Genereeri uus sertifikaat</a>
+                <% } %>
+
+            </td>
+        </tr>
+
+        <% if(banks[project.bank].type == "ipizza" || banks[project.bank].type == "ec"){ %>
+
+            <tr>
+                <th>
+                    Kaupmehe salajane võti
+                </th>
+                <td>
+                    <a class="btn" href="/project/<%= project._id %>/user_key.pem" target="_blank"><i class="icon-download"></i> user_key.pem</a>
+                    <small>Selle võtmefailiga tuleb allkirjastada panka mineva makse andmed</small>
+                </td>
+            </tr>
+<!--
+            <tr>
+                <th>
+                    Kaupmehe sertifikaat
+                </th>
+                <td>
+                    <a class="btn" href="/project/<%= project._id %>/user_cert.pem" target="_blank"><i class="icon-download"></i>user_cert.pem</a>
+                    <small>Selle sertifikaadi abil kontrollib pank makse andmete kehtivust</small>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    Panga salajane võti
+                </th>
+                <td>
+                    <a class="btn" href="/project/<%= project._id %>/bank_key.pem" target="_blank"><i class="icon-download"></i>bank_key.pem</a>
+                    <small>Selle võtmefailiga allkirjastab pank makse kinnituse andmed</small>
+                </td>
+            </tr>
+-->
+            <tr>
+                <th>
+                    Panga sertifikaat
+                </th>
+                <td>
+                    <a class="btn" href="/project/<%= project._id %>/bank_cert.pem" target="_blank"><i class="icon-download"></i>bank_cert.pem</a>
+                    <small>Selle sertifikaadi abil tuleb kontrollida pangast saabunud maksekinnituse kehtivust</small>
+                </td>
+            </tr>
+
+        <% } %>
+
+        <% if(banks[project.bank].type == "solo"){ %>
+            <tr>
+                <th>
+                    Salajane MAC võti
+                </th>
+                <td>
+                    <code><%= project.secret %></code>
+                    <small>Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks</small>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Allkirjastamise algoritm
+                </th>
+                <td>
+                    <code><%= project.soloAlgo %></code>
+                    <small>Päringute allkirjastamisel kasutatav krüptoalgoritm</small>
+                </td>
+            </tr>
+        <% } %>
+
+    </table>
+
+    <div>
+        <a class="btn btn-info" href="/edit-project/<%= project._id %>"><i class="icon-edit"></i> Muuda makselahenduse andmeid</a>
+    </div>
+
+  </div>
+</div>

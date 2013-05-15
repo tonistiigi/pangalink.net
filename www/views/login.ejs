@@ -1,0 +1,22 @@
+<form action="/login" method="post">
+
+    <h3>Logi sisse</h3>
+
+    <div class="control-group">
+        <label class="control-label" for="username">E-posti aadress</label>
+        <div class="controls">
+           <input class="span3" type="email" name="username" id="username" value="<%= username %>" placeholder="user@example.com" required/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="password">Parool</label>
+        <div class="controls">
+          <input class="span3" type="password" name="password" id="password" required/>
+        </div>
+    </div>
+
+    <button type="submit" class="btn">Logi sisse</button>
+
+    <p><small>Oled unustanud oma parooli? Telli endale uus parool <a href="/reset-link">siit</a></small></p>
+</form>

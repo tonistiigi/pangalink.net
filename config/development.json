@@ -1,0 +1,98 @@
+{
+    "#": "How many cluster workers to create",
+    "workerCount": 1,
+
+    "#": "See Connect logger middleware help for logger options",
+    "loggerInterface": "tiny",
+
+    "#": "Domain name to be used all around the page",
+    "hostname": "pangalink.net",
+
+    "#": "Name of the service",
+    "title": "Pangalink.net",
+
+    "#": "Twitter handle to be used in the menu bar",
+    "twitter": "Pangalink_net",
+
+    "#": "HTTP/S server configuration",
+    "web":{
+
+        "#": "Which port to listen (anything below 1000 requires root user. 80 is HTTP and 443 HTTPS",
+        "port": 3480,
+
+        "#": "If behind proxy, then the protocol the user sees is not what pangalink.net actually uses.",
+        "#": "Pangalink.net might be using HTTP internally but user should only use HTTPS addresses",
+        "# forceProtocol": "https",
+
+        "#": "Always redirect to this domain, if something else was used. Optional, might be left blank",
+        "# forceDomain": "pangalink.net",
+
+        "#": "If you want to enable HTTPS (if you are not behind HTTPS proxy):",
+        "#": "ssl: {",
+        "#": "    key: abspath_to_private_key,",
+        "#": "    cert: abspath_to_server_certificate,",
+        "#": "    ca: [optional_root_ca1_path, optional_root_ca2_path, ...]",
+        "#": "}"
+    },
+
+    "#": "Express session configuration",
+    "session": {
+        "secret": "some_random_value",
+        "ttl": 3600
+    },
+
+    "#": "Redis configuration",
+    "redis":{
+        "host": "localhost",
+        "db": 3,
+        "port": false
+    },
+
+    "#": "SMTP configuration",
+    "mail":{
+
+        "#": "Sender address",
+        "from": "Pangalink <no-reply@pangalink.net>",
+
+        "#": "SMTP settings for Nodemailer",
+        "smtp":{
+            "host": "localhost"
+        }
+    },
+
+    "#": "Ipizza default charset",
+    "ipizza":{
+        "defaultCharset": "ISO-8859-1"
+    },
+
+    "#": "Estcard default charset",
+    "ec":{
+        "defaultCharset": "ISO-8859-1"
+    },
+
+    "#": "Solo default charset",
+    "solo":{
+        "defaultCharset": "ISO-8859-1"
+    },
+
+    "#": "Mongodb configuration",
+    "mongo":{
+        "#": "Server hostname",
+        "host": "localhost",
+
+        "#": "Database name",
+        "name": "pangalink"
+    },
+
+    "#": "How many rows in one page (transaction logs etc.)",
+    "pagingCount": 30,
+
+    "#": "How many before and after links are shown in the paging section",
+    "pagingRange": 5,
+
+    "#": "Default bit size for certificates",
+    "keyBitsize": 2048,
+
+    "#": "Allow everybody to access this payment log",
+    "demoPayment": "5170f8369f6fbc7034000001"
+}

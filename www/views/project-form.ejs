@@ -1,0 +1,153 @@
+    <p>Makselahendus sisaldab endas makseks vajalikke kasutajatunnuseid ning sertifikaate. Makselahendused võimaldavad  grupeerida näiteks ühe kliendi või projektiga seotud makseid. Iga tehtud makse logitakse koos kogu sellega seotud infoga ning seda on võimalik hiljem vaadata.</p>
+
+    <h4>Üldised seaded</h4>
+
+    <input type="hidden" name="id" value="<%= id %>"/>
+
+    <% if(action == "add"){ %>
+        <div class="control-group <% if(validation.bank){%>error<%}%>">
+            <label class="control-label" for="bank">Vali panga tüüp</label>
+            <div class="controls">
+                <select name="bank" id="bank" onclick="showBankSettings()" onchange="showBankSettings()" required>
+                    <option value=""> –– Vali pank –– </option>
+                    <% Object.keys(banks).forEach(function(key){ %>
+                        <option value="<%= banks[key].key %>" <% if(banks[key].key == bank){%>selected<%}%>><%= banks[key].name %></option>
+                    <%})%>
+                </select>
+
+                <% if(validation.bank){%>
+                    <span class="help-inline"><%= validation.bank %></span>
+                <%}%>
+            </div>
+            <span class="help-block">Panga tüüpi tagantjärele muuta ei saa</span>
+        </div>
+    <% } %>
+
+    <% if(action == "modify"){ %>
+        <p>Panga tüüp: <strong><%= banks[bank].name %></strong></p>
+    <% } %>
+
+    <div class="control-group <% if(validation.name){%>error<%}%>">
+        <label class="control-label" for="name">Makselahenduse nimetus</label>
+        <div class="controls">
+            <input class="span3" type="text" name="name" id="name" value="<%= name %>" placeholder="Minu makselahendused" required/>
+            <% if(validation.name){%>
+                <span class="help-inline"><%= validation.name %></span>
+            <%}%>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="description">Makselahenduse kirjeldus</label>
+        <div class="controls">
+            <textarea class="span5" rows="3" id="description" name="description"><%= description %></textarea>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="authorized">Lubatud kasutajad</label>
+        <div class="controls">
+            <textarea class="span5" rows="3" id="authorized" name="authorized"><%= authorized && authorized.join("\n") || "" %></textarea>
+        </div>
+        <span class="help-block">Sisesta eraldi ridadele nende kasutajate e-posti aadressid, kes tohivad selle makselahendusega toimetada (muuta andmeid, näha maksete infot jne)</span>
+    </div>
+
+    <div id="soloform" style="<%= bank == "nordea" ? "display: block;" : "display:none;" %>">
+        <hr>
+
+        <h4>Nordea seaded</h4>
+
+        <div class="control-group <% if(validation.soloAlgo){%>error<%}%>">
+            <label class="control-label" for="soloAlgo">Allkirjastamise algoritm</label>
+            <div class="controls">
+                <select name="soloAlgo" id="soloAlgo">
+                    <option <% if(soloAlgo == "md5"){ %> selected<% } %> value="md5">MD5 (vaikimisi)</option>
+                    <option <% if(soloAlgo == "sha1"){ %> selected<% } %> value="sha1">SHA1</option>
+                    <!--<option <% if(soloAlgo == "sha256"){ %> selected<% } %> value="sha256">SHA-256</option>-->
+                </select>
+
+                <% if(validation.soloAlgo){%>
+                    <span class="help-inline"><%= validation.soloAlgo %></span>
+                <%}%>
+            </div>
+
+            <label class="checkbox">
+                <input type="checkbox" name="soloAutoResponse" value="true" <%= soloAutoResponse ? "checked" : "" %>>
+                Saada automaatvastus kaupmehe serverile (kasutades SOLOPMT_RETURN aadressi) peale makse sooritamist
+            </label>
+        </div>
+    </div>
+
+    <div id="ecform" style="<%= bank == "ec" ? "display: block;" : "display:none;" %>">
+        <hr>
+
+        <h4>Pankade kaardikeskuse seaded</h4>
+
+        <div class="control-group <% if(validation.ecUrl){%>error<%}%>">
+            <label class="control-label" for="ecUrl">Tagasisuunamise aadress</label>
+            <div class="controls">
+                <input class="span4" type="url" name="ecUrl" id="ecUrl" value="<%= ecUrl %>" placeholder="http://example.com/return_from_ec.php"/>
+
+                <% if(validation.ecUrl){%>
+                    <span class="help-inline"><%= validation.ecUrl %></span>
+                <%}%>
+            </div>
+            <span class="help-block">Peale makse sooritamist suunatakse maksja siin määratud aadressile</span>
+        </div>
+    </div>
+
+    <div id="ipizzaform" style="<%= bank != "ec" && bank != "nordea" ? "display: block;" : "display:none;" %>">
+        <hr>
+
+        <h4>Ipizza seaded</h4>
+
+        <p>Järgmised andmed on vajalikud teenuskoodi 1002 kasutamiseks ning need defineerivad makse saaja andmed.</p>
+
+        <div class="control-group">
+            <label class="control-label" for="ipizzaReceiverName">Makse saaja nimi</label>
+            <div class="controls">
+                <input class="span4" type="text" name="ipizzaReceiverName" id="ipizzaReceiverName" value="<%= ipizzaReceiverName %>" placeholder="Konto Omanik OÜ"/>
+            </div>
+            <span class="help-block">Kui saaja nimi on määramata, kasutatakse vaikimisi makselahenduse nimetust</span>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="ipizzaReceiverAccount">Makse saaja konto</label>
+            <div class="controls">
+                <input class="span4" type="text" name="ipizzaReceiverAccount" id="ipizzaReceiverAccount" value="<%= ipizzaReceiverAccount %>" placeholder="991234567897"/>
+            </div>
+            <span class="help-block">Kui konto number on määramata, genereeritakse vajadusel selleks suvaline number</span>
+        </div>
+    </div>
+
+    <script>
+        function showBankSettings(){
+            var bank = document.getElementById("bank"),
+                ipizzaform = document.getElementById("ipizzaform"),
+                soloform = document.getElementById("soloform"),
+                ecform = document.getElementById("ecform");
+
+            if(bank.value != "ec" && bank.value != "nordea"){
+                soloform.style.display = "none";
+                ecform.style.display = "none";
+                ipizzaform.style.display = "block";
+            }else{
+                switch(bank.value){
+                    case "nordea":
+                        soloform.style.display = "block";
+                        ecform.style.display = "none";
+                        ipizzaform.style.display = "none";
+                        break;
+                    case "ec":
+                        ecform.style.display = "block";
+                        soloform.style.display = "none";
+                        ipizzaform.style.display = "none";
+                        break;
+                    default:
+                        soloform.style.display = "none";
+                        ecform.style.display = "none";
+                        ipizzaform.style.display = "none";
+                }
+            }
+        }
+    </script>

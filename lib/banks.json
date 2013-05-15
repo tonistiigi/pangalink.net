@@ -1,0 +1,161 @@
+{
+    "swedbank": {
+        "key": "swedbank",
+        "type": "ipizza",
+        "name": "Swedbank Emulaator",
+        "charset": "VK_ENCODING",
+        "allowedCharsets": [
+            "ISO-8859-1",
+            "ISO-8859-4",
+            "UTF-8"
+        ],
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_RETURN",
+        "returnMethod": "GET",
+        "id": "HP",
+        "accountNrPrefix": 22,
+        "accountNrLength": 12
+    },
+    "seb": {
+        "key": "seb",
+        "type": "ipizza",
+        "name": "SEB Emulaator",
+        "charset": "VK_CHARSET",
+        "allowedCharsets": [
+            "ISO-8859-1",
+            "UTF-8"
+        ],
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_CANCEL",
+        "rejectAddress": "VK_CANCEL",
+        "id": "EYP",
+        "accountNrPrefix": 10,
+        "accountNrLength": 14,
+        "utf8length": "bytes"
+    },
+    "sampo": {
+        "key": "sampo",
+        "type": "ipizza",
+        "name": "Danske Emulaator",
+        "charset": false,
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_RETURN",
+        "id": "SAMPOPANK",
+        "accountNrPrefix": 33,
+        "accountNrLength": 12,
+        "disallowQueryParams": true
+    },
+    "krediidipank": {
+        "key": "krediidipank",
+        "type": "ipizza",
+        "name": "Krediidipanga Emulaator",
+        "charset": "VK_CHARSET",
+        "allowedCharsets": [
+            "ISO-8859-13",
+            "UTF-8",
+            "WIN-1257"
+        ],
+        "defaultCharset": "ISO-8859-13",
+        "forceCharset": "Krediidipanga puhul on kodeeringu parameetri VK_CHARSET kasutamine kohustuslik. Pank ise seda ei nõua, küll aga kasutab sellisel juhul ebastandardset allkirjastamise meetodit.",
+        "returnAddress": "VK_RETURN",
+        "id": "KREP",
+        "accountNrPrefix": 42,
+        "accountNrLength": 13,
+        "utf8length": "bytes"
+    },
+    "ipizza": {
+        "key": "ipizza",
+        "type": "ipizza",
+        "name": "IPizza Pank",
+        "charset": false,
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_RETURN",
+        "id": "GENIPIZZA",
+        "accountNrPrefix": 99,
+        "accountNrLength": 12
+    },
+    "nordea": {
+        "key": "nordea",
+        "type": "solo",
+        "name": "Nordea Emulaator",
+        "charset": false,
+        "defaultCharset": "ISO-8859-1",
+        "returnAddress": "RETURN",
+        "cancelAddress": "CANCEL",
+        "rejectAddress": "REJECT",
+        "id": "NORDEA",
+        "accountNrPrefix": 17,
+        "accountNrLength": 11
+    },
+    "ec": {
+        "key": "ec",
+        "type": "ec",
+        "name": "Pankade Kaardikeskuse Emulaator",
+        "charset": false,
+        "id": "ECOMMERCE",
+        "accountNrPrefix": 99,
+        "accountNrLength": 12,
+        "defaultCharset": "ISO-8859-1",
+        "allowedCharsets": [
+            "ISO-8859-1",
+            "UTF-8"
+        ]
+    },
+    "swedbank.lv": {
+        "key": "swedbank.lv",
+        "type": "ipizza",
+        "name": "Swedbank Latvia Emulaator",
+        "allowedServices": [
+            "1002"
+        ],
+        "charset": "VK_ENCODING",
+        "allowedCharsets": [
+            "ISO-8859-13",
+            "UTF-8"
+        ],
+        "defaultCharset": "ISO-8859-13",
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_RETURN",
+        "returnMethod": "GET",
+        "id": "HP",
+        "accountNrPrefix": 22,
+        "accountNrLength": 12
+    },
+    "swedbank.lt": {
+        "key": "swedbank.lt",
+        "type": "ipizza",
+        "name": "Swedbank Lithuania Emulaator",
+        "allowedServices": [
+            "1002"
+        ],
+        "charset": "VK_ENCODING",
+        "allowedCharsets": [
+            "ISO-8859-13",
+            "UTF-8"
+        ],
+        "defaultCharset": "ISO-8859-13",
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_RETURN",
+        "returnMethod": "GET",
+        "id": "HP",
+        "accountNrPrefix": 22,
+        "accountNrLength": 12
+    },
+    "lhv": {
+        "key": "lhv",
+        "type": "ipizza",
+        "name": "LHV Emulaator",
+        "charset": "VK_CHARSET",
+        "allowedCharsets": [
+            "ISO-8859-1",
+            "UTF-8",
+            "WINDOWS-1257"
+        ],
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_RETURN",
+        "id": "LHV",
+        "accountNrPrefix": 77,
+        "accountNrLength": 12,
+        "utf8length": "bytes"
+    }
+}

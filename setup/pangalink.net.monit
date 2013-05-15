@@ -1,0 +1,4 @@
+check process pangalink.net with pidfile /var/run/pangalink.net.pid
+   start program = "/etc/init.d/pangalink.net start"
+   stop program = "/etc/init.d/pangalink.net stop"
+   if 5 restarts within 5 cycles then timeout

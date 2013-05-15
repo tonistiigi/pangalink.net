@@ -1,0 +1,60 @@
+<form action="/profile" method="post">
+
+    <h3>Muuda oma profiili</h3>
+
+    <div class="control-group <% if(validation.name){%>error<%}%>">
+        <label class="control-label" for="name">Sinu nimi</label>
+        <div class="controls">
+            <input class="span3" type="text" name="name" id="name" value="<%= name %>" required/>
+            <% if(validation.name){%>
+                <span class="help-inline"><%= validation.name %></span>
+            <%}%>
+        </div>
+    </div>
+
+    <div class="control-group <% if(validation.company){%>error<%}%>">
+        <label class="control-label" for="company">Ettevõtte nimi</label>
+        <div class="controls">
+            <input class="span3" type="text" name="company" id="company" value="<%= company %>" required/>
+            <% if(validation.company){%>
+                <span class="help-inline"><%= validation.company %></span>
+            <%}%>
+        </div>
+    </div>
+
+    <div class="control-group <% if(validation.username){%>error<%}%>">
+        <label class="control-label" for="username">E-posti aadress</label>
+        <div class="controls">
+            <input class="span3" type="email" name="username" id="username" value="<%= username %>" disabled/>
+            <% if(validation.username){%>
+                <span class="help-inline"><%= validation.username %></span>
+            <%}%>
+        </div>
+    </div>
+
+    <hr/>
+
+    <p><strong>Jäta parooli väljad tühjaks, kui ei soovi parooli muuta</strong></p>
+
+    <div class="control-group <% if(validation.password){%>error<%}%>">
+        <label class="control-label" for="password">Parool</label>
+        <div class="controls">
+            <input class="span3" type="password" name="password" id="password"/>
+            <% if(validation.password){%>
+                <span class="help-inline"><%= validation.password %></span>
+            <%}%>
+        </div>
+    </div>
+
+    <div class="control-group <% if(validation.password2){%>error<%}%>">
+        <label class="control-label" for="password2">Parooli kordus</label>
+        <div class="controls">
+            <input class="span3" type="password" name="password2" id="password2"/>
+            <% if(validation.password2){%>
+                <span class="help-inline"><%= validation.password2 %></span>
+            <%}%>
+        </div>
+    </div>
+
+    <button type="submit" class="btn">Muuda oma profiili</button>
+</form>

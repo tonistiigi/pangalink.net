@@ -1,0 +1,32 @@
+{
+  "name": "pangalink.net",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Pangalink.net",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andris9/pangalink.net.git"
+  },
+  "author": "Andris Reinman",
+  "license": "MIT",
+
+  "dependencies": {
+    "express": "*",
+    "ejs": "*",
+    "moment": "*",
+    "connect-redis": "*",
+    "redis": "*",
+    "hiredis": "*",
+    "fetch": "*",
+    "passport": "*",
+    "connect-flash": "*",
+    "passport-local": "*",
+    "nodemailer": "*",
+    "encoding": "*",
+    "iconv": "*",
+    "mongodb": "*",
+    "pem": "~0.2",
+    "zipstream": "*"
+  }
+}

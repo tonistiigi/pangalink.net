@@ -1,0 +1,30 @@
+<form action="/add-project" method="post">
+
+    <h3>Loo uus makselahendus</h3>
+
+    <% include project-form %>
+
+    <hr />
+
+    <h4>Sertifikaadi valikud</h4>
+
+    <div class="control-group <% if(validation.keyBitsize){%>error<%}%>">
+        <label class="control-label" for="keyBitsize">Võtme pikkus</label>
+        <div class="controls">
+            <select name="keyBitsize" id="keyBitsize">
+                <option <% if(keyBitsize == 1024){ %> selected<% } %> value="1024">1024 bitti</option>
+                <option <% if(keyBitsize == 2048 || !keyBitsize){ %> selected<% } %> value="2048">2048 bitti</option>
+                <option <% if(keyBitsize == 4096){ %> selected<% } %> value="4096">4096 bitti</option>
+            </select>
+
+            <% if(validation.keyBitsize){%>
+                <span class="help-inline"><%= validation.keyBitsize %></span>
+            <%}%>
+        </div>
+        <span class="help-block">Võtme pikkuse valik mõjub ainult Ipizza põhistele pankadele ning Kaardikeskusele, mis kasutavad allkirjastamiseks avaliku võtme süsteemi</span>
+    </div>
+
+    <hr>
+
+    <button type="submit" class="btn">Loo uus makselahendus</button>
+</form>

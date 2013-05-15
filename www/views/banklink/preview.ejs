@@ -1,0 +1,138 @@
+<% include header %>
+
+<h2>Maksekorralduse teostamine</h2>
+
+<% if(payment.warnings && payment.warnings.length){%>
+
+    <div class="alert">
+            <% payment.warnings.forEach(function(warning, i){%>
+                <%- i && "<br/>" || "" %>
+                <%= typeof warning != "object" ? warning : warning.warning %>
+            <% }) %>
+    </div>
+
+<%}%>
+
+<fieldset>
+    <legend>Maksekorraldus</legend>
+
+    <form method="post" action="/final/<%= payment._id %>">
+
+    <table>
+
+        <% if(payment.editSenderName){%>
+            <tr>
+                <td>
+                    <label for="payment_name">Makse sooritaja nimi</label>
+                </td>
+                <td>
+                    <input type="text" id="payment_snd_name" name="senderName" placeholder="Tõõger Leõpäöld" value="<%= payment.senderName || "Tõõger Leõpäöld" %>" class="span4"/>
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(payment.showSenderName){%>
+            <tr>
+                <td>
+                    Makse sooritaja nimi
+                </td>
+                <td>
+                    <strong><%= payment.senderName || "Tõõger Leõpäöld" %></strong>
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(payment.editSenderAccount){%>
+            <tr>
+                <td>
+                    <label for="payment_snd_account">Makse sooritaja konto</label>
+                </td>
+                <td>
+                    <input type="text" id="payment_snd_account" name="senderAccount" placeholder="<%= senderAccount %>" value="<%= senderAccount %>" class="span4"/>
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(payment.showSenderAccount){%>
+            <tr>
+                <td>
+                    Makse sooritaja konto
+                </td>
+                <td>
+                    <strong><%= payment.snd_account %></strong>
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(payment.showReceiverName){%>
+            <tr>
+                <td>
+                    Makse saaja nimi
+                </td>
+                <td>
+                    <strong><%= payment.receiverName || "" %></strong>
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(payment.showReceiverAccount){%>
+            <tr>
+                <td>
+                    Makse saaja konto
+                </td>
+                <td>
+                    <strong><%= payment.receiverAccount %></strong>
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(payment.message){%>
+            <tr>
+                <td>
+                    Makse selgitus
+                </td>
+                <td>
+                    <strong><%= payment.message || "" %></strong>
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(payment.referenceCode){%>
+            <tr>
+                <td>
+                    Viitenumber
+                </td>
+                <td>
+                    <strong><%= payment.referenceCode || "" %></strong>
+                </td>
+            </tr>
+        <% } %>
+
+        <tr>
+            <td>
+                Makse summa
+            </td>
+            <td>
+                <strong><%= payment.amount || "0,00" %></strong>
+            </td>
+        </tr>
+
+    </table>
+
+    <hr />
+
+    <button type="submit" name="pay" value="pay" class="btn btn-info">Soorita makse</button>
+
+    <button type="submit" name="cancel" value="cancel" class="btn btn-warning">Katkesta makse</button>
+
+    <% if(bank.rejectAddress){%>
+        <button type="submit" name="reject" value="reject" class="btn btn-inverse">Tühista tehnilistel põhjustel</button>
+    <% } %>
+
+    </form>
+
+    <% include info %>
+
+</fieldset>
+
+<% include footer %>
