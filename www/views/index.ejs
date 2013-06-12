@@ -16,6 +16,7 @@
             }
         </style>
         <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="/style/docs.css" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -25,7 +26,7 @@
         <link href="/style/todc-bootstrap.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
@@ -53,32 +54,44 @@
 
         <div class="container">
 
-
-            <% messages.success.forEach(function(msg){%>
-                <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <%= msg %>
+            <div class="row">
+                <div class="span3 bs-docs-sidebar">
+                    <ul class="nav nav-list bs-docs-sidenav">
+                    <% include mainmenu %>
+                    </ul>
                 </div>
-            <%});%>
+                <div class="span9">
 
-            <% messages.error.forEach(function(msg){%>
-                <div class="alert alert-error">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <%= msg %>
+                    <% messages.success.forEach(function(msg){%>
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <%= msg %>
+                        </div>
+                    <%});%>
+
+                    <% messages.error.forEach(function(msg){%>
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <%= msg %>
+                        </div>
+                    <%});%>
+
+                    <% messages.info.forEach(function(msg){%>
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <%= msg %>
+                        </div>
+                    <%});%>
+
+                    <div class="page-header">
+                        <h1><%= title %></h1>
+                        <p class="lead">Pangalinkide universaalne testkeskkond</p>
+                    </div>
+
+                    <% include router %>
+
                 </div>
-            <%});%>
-
-            <% messages.info.forEach(function(msg){%>
-                <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <%= msg %>
-                </div>
-            <%});%>
-
-            <h1><%= title %></h1>
-            <p class="lead">Pangalinkide universaalne testkeskkond</p>
-
-            <% include router %>
+            </div>
 
         </div> <!-- /container -->
 
