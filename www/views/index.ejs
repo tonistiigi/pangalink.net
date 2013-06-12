@@ -52,6 +52,13 @@
             </div>
         </div>
 
+        <header class="jumbotron subhead" id="overview">
+          <div class="container">
+            <h1><%= title %></h1>
+            <p class="lead">Pangalinkide universaalne testkeskkond</p>
+          </div>
+        </header>
+
         <div class="container">
 
             <div class="row">
@@ -61,6 +68,10 @@
                     </ul>
                 </div>
                 <div class="span9">
+
+                    <% if(messages.success.length || messages.error.length || messages.info.length){%>
+                    <p>&nbsp;</p>
+                    <%}%>
 
                     <% messages.success.forEach(function(msg){%>
                         <div class="alert alert-success">
@@ -82,11 +93,6 @@
                             <%= msg %>
                         </div>
                     <%});%>
-
-                    <div class="page-header">
-                        <h1><%= title %></h1>
-                        <p class="lead">Pangalinkide universaalne testkeskkond</p>
-                    </div>
 
                     <% include router %>
 

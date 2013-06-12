@@ -1,7 +1,7 @@
 <li<% if(page=="/"){%> class="active"<%}%>><a href="/">Esileht</a></li>
 
 <% if(user && user.id){ %>
-<li<% if(page=="/projects"){%> class="active"<%}%>><a href="/projects">Makselahendused</a></li>
+<li<% if(page=="/projects" || page=="/project" || page=="/payment"){%> class="active"<%}%>><a href="/projects">Makselahendused</a></li>
 <% } %>
 
 <li<% if(page=="/info"){%> class="active"<%}%>><a href="/info">Info</a></li>
