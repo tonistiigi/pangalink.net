@@ -84,8 +84,14 @@
                     Kaupmehe salajane võti
                 </th>
                 <td>
-                    <a class="btn" href="/project/<%= project._id %>/user_key.pem" target="_blank"><i class="icon-download"></i> user_key.pem</a>
-                    <small>Selle võtmefailiga tuleb allkirjastada panka mineva makse andmed</small>
+                    <p>
+                        <a class="btn" href="/project/<%= project._id %>/user_key.pem" target="_blank"><i class="icon-download"></i> user_key.pem</a>
+                        <small>Selle võtmefailiga tuleb allkirjastada panka mineva makse andmed</small
+                    </p>
+                    <p>
+                        Võtmefaili sisu:<br />
+                        <textarea class="span6" rows="3" style="font-family: monospace;" onfocus="this.select()" onclick="this.select()"><%= project.userCertificate.clientKey %></textarea>
+                    </p>
                 </td>
             </tr>
 <!--
@@ -114,8 +120,14 @@
                     Panga sertifikaat
                 </th>
                 <td>
-                    <a class="btn" href="/project/<%= project._id %>/bank_cert.pem" target="_blank"><i class="icon-download"></i>bank_cert.pem</a>
-                    <small>Selle sertifikaadi abil tuleb kontrollida pangast saabunud maksekinnituse kehtivust</small>
+                    <p>
+                        <a class="btn" href="/project/<%= project._id %>/bank_cert.pem" target="_blank"><i class="icon-download"></i>bank_cert.pem</a>
+                        <small>Selle sertifikaadi abil tuleb kontrollida pangast saabunud maksekinnituse kehtivust</small>
+                    </p>
+                    <p>
+                        Sertifikaadi sisu:<br />
+                        <textarea class="span6" rows="3" style="font-family: monospace;" onfocus="this.select()" onclick="this.select()"><%= project.bankCertificate.certificate %></textarea>
+                    </p>
                 </td>
             </tr>
 
