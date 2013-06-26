@@ -1,0 +1,84 @@
+<div class="page-header">
+    <h2>API</h2>
+</div>
+
+<div class="well well-small">
+    <% if(user){%>
+        Sinu salajane API võti on <strong style="font-family: monospace"><%= user.token %></strong>
+    <% } %>
+    <% if(!user){%>
+        Sisselogitud kasutajale kuvatakse siin pangalink.net salajane API võti
+    <% } %>
+</div>
+
+<p>Kõikide API päringute lõppu tuleks panna GET parameeter <code>access_token</code>, mille väärtuseks on kasutaja salajane API võti. API päringu sisu (POST ja PUT päringute puhul) peab olema JSON formaadis. Samas formaadis on ka päringu vastus.</p>
+
+<p>Juhul kui päring õnnestub, on vastus järgmisel kujul:</p>
+
+<pre>{
+    "success": true,
+    "data": &lt;päringu spetsiifilised andmed&gt;
+}</pre>
+
+<p>Juhul kui päringus esineb vigu, on vastuseks järgmine objekt:</p>
+
+<pre>{
+    "success": false,
+    "error": "&lt;ilmnenud vea kirjeldus&gt;"
+}</pre>
+
+<h3>Uue makselahenduse loomine</h3>
+
+<p>Selle meetodiga saad luua uusi makselahendusi. Edastades makselahenduse andmed, saad vastu loodud makselahenduse kasutajatunnuse ning võtmed.</p>
+
+<h4>POST /api/project</h4>
+
+<h5>Sisendparameetrid</h5>
+
+<ul>
+    <li><code>type</code> - panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
+    <li><code>name</code> - Makselahenduse nimi</li>
+    <li><code>description</code> - Makselahenduse kirjeldus. Pole kohustuslik</li>
+    <li><code>account_owner</code> - Konto omaniku nimi. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi kasutatakse makselahenduse nime</li>
+    <li><code>account_nr</code> - Konto number. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi genereeritakse suvaline number</li>
+    <li><code>key_size</code> - Avaliku võtme süsteemi kasutavate pankade puhul privaatvõtme suurus (üks nimekirjast: 1024, 2048, 4096). Pole kohustuslik, vaikimisi kasutatakse 2048</li>
+    <li><code>return_url</code> - Tagasisuunamise aadress peale makse sooritamist. Kohustuslik vaid Pankade Kaardikeskuse valiku korral, muudel juhtudel ei kasutata</li>
+    <li><code>solo_algo</code> - Allkirjastamise algoritm (üks valikust: md5, sha1). Pole kohustuslik. Vajalik vaid Nordea valiku korral, muudel juhtudel ei kasutata. Kui on määramata, kasutatakse väärtust "MD5"</li>
+</ul>
+
+<h5>Vastusparameetrid</h5>
+
+<ul>
+    <li><code>id</code> - makselahenduse identifikaator</li>
+    <li><code>client_id</code> - kliendi tunnuskood pangale edastamiseks</li>
+    <li><code>payment_url</code> - maksevormi aadress</li>
+    <li><code>expiration_time</code> - sertifikaadi aegumise aeg</li>
+    <li><code>private_key</code> - salajane võti panka mineva makse andmete allkirjastamiseks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
+    <li><code>bank_certificate</code> - panga sertifikaat pangast saabunud maksekinnituse kontrolliks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
+    <li><code>mac_key</code> - Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks (ainult Nordea puhul)</li>
+    <li><code>solo algo</code> - Allkirjastamise algoritm (ainult Nordea puhul)</li>
+</ul>
+
+<h4><strong>Demo</strong></h4>
+
+<h5>Päring</h5>
+
+<pre>curl -XPOST https://<%= hostname %>/api/project?access_token=<%= user && user.token || 12345%> \
+    --data '{
+        "type": "ipizza",
+        "name": "Testkonto"
+    }'</pre>
+
+<h5>Vastus</h5>
+
+<pre>{
+    "success": true,
+    "data":{
+        "id": "516e93fd9f89270f97000001",
+        "client_id": "uid400024",
+        "payment_url": "https://pangalink.net/banklink/ipizza",
+        "expiration_time": "Wed Oct 16 2013 23:26:50 GMT+0300 (EEST)",
+        "private_key": "-----BEGIN RSA PRIVATE KEY----- ...",
+        "bank_certificate": "-----BEGIN CERTIFICATE----- ..."
+    }
+}</pre>
