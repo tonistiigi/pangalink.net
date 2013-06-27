@@ -64,11 +64,14 @@
 
 <pre>{
     "success": true,
-    "data":{
-        "id": "<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>",
-        "client_id": "<%= list[0] && list[0].uid || "uid400024" %>",
+    "data": {
+        "id": "516e93fd9f89270f97000001",
+        "client_id": "uid402268",
         "payment_url": "https://pangalink.net/banklink/ipizza",
-        "expiration_time": "Wed Oct 16 2013 23:26:50 GMT+0300 (EEST)",
+        "type": "ipizza",
+        "name": "Testkonto",
+        "expiration_time": "Sun, 25 Jun 2023 09:26:49 GMT",
+        "key_size": 1024,
         "private_key": "-----BEGIN RSA PRIVATE KEY----- ...",
         "bank_certificate": "-----BEGIN CERTIFICATE----- ..."
     }
@@ -88,7 +91,7 @@
     <li><code>description</code> - Makselahenduse kirjeldus. Pole kohustuslik</li>
     <li><code>account_owner</code> - Konto omaniku nimi. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi kasutatakse makselahenduse nime</li>
     <li><code>account_nr</code> - Konto number. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi genereeritakse suvaline number</li>
-    <li><code>key_size</code> - Avaliku võtme süsteemi kasutavate pankade puhul privaatvõtme suurus (üks nimekirjast: 1024, 2048, 4096). Pole kohustuslik, vaikimisi kasutatakse 2048</li>
+    <li><code>key_size</code> - Avaliku võtme süsteemi kasutavate pankade puhul privaatvõtme suurus (üks nimekirjast: 1024, 2048, 4096). Pole kohustuslik, vaikimisi kasutatakse 1024</li>
     <li><code>return_url</code> - Tagasisuunamise aadress peale makse sooritamist. Kohustuslik vaid Pankade Kaardikeskuse valiku korral, muudel juhtudel ei kasutata</li>
     <li><code>algo</code> - Allkirjastamise algoritm (üks valikust: md5, sha1). Pole kohustuslik. Vajalik vaid Nordea valiku korral, muudel juhtudel ei kasutata. Kui on määramata, kasutatakse väärtust "MD5"</li>
     <li><code>auto_response</code> - Kas pank peaks tegema automaatpäringu makse teostamisel (<em>true</em> või <em>false</em>. Pole kohustuslik. Vajalik vaid Nordea valiku korral. Vaikimisi automaatpäringut ei tehta</li>
@@ -129,11 +132,14 @@
 
 <pre>{
     "success": true,
-    "data":{
-        "id": "516e93fd9f89270f97000001",
-        "client_id": "uid400024",
+    "data": {
+        "id": "51cc0559fa66e5522c000003",
+        "client_id": "uid402268",
         "payment_url": "https://pangalink.net/banklink/ipizza",
-        "expiration_time": "Wed Oct 16 2013 23:26:50 GMT+0300 (EEST)",
+        "type": "ipizza",
+        "name": "Testkonto",
+        "expiration_time": "Sun, 25 Jun 2023 09:26:49 GMT",
+        "key_size": 1024,
         "private_key": "-----BEGIN RSA PRIVATE KEY----- ...",
         "bank_certificate": "-----BEGIN CERTIFICATE----- ..."
     }
