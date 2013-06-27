@@ -27,6 +27,63 @@
     "error": "&lt;ilmnenud vea kirjeldus&gt;"
 }</pre>
 
+<h3>Makselahenduste nimekiri</h3>
+
+<p>Selle meetodiga saab küsida kasutaja makselahenduste nimekirja.</p>
+
+<h4>GET /api/project</h4>
+
+<h5>GET parameetrid</h5>
+
+<ul>
+    <li><code>start_index</code> - millisest kirjest alustada kuvamist (korraga näidatakse kuni 20 kirjet)
+</ul>
+
+<h5>Vastusparameetrid</h5>
+
+<ul>
+    <li><code>total</code> - Mitu kirjet on üldse kokku</li>
+    <li><code>start_index</code> - Millisest kirjest alates hetkel nimekirja kuvatakse</li>
+    <li><code>end_index</code> - Milline kirje on kuvatavas nimekirjas viimane</li>
+    <li><code>list</code> - Kirjete nimekiri
+        <ul>
+            <li><code>id</code> - makselahenduse identifikaator</li>
+            <li><code>type</code> - panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
+            <li><code>name</code> - Makselahenduse nimi</li>
+        </ul>
+    </li>
+    
+</ul>
+
+<h4><strong>Demo</strong></h4>
+
+<h5>Päring</h5>
+
+<pre>curl -XGET "https://<%= hostname %>/api/project?access_token=<%= user && user.token || 12345%>"</pre>
+
+<h5>Vastus</h5>
+
+<pre>{
+    "success": true,
+    "data": {
+        "total": 67,
+        "start_index": 0,
+        "end_index": 9,
+        "list": [
+            {
+                "id": "51cc029c69d3730000000003",
+                "name": "Testkonto 1",
+                "type": "ipizza"
+            },
+            {
+                "id": "51cc026c69d3730000000002",
+                "name": "Testkonto 2",
+                "type": "ec"
+            },
+            ...
+    ]
+}</pre>
+
 <h3>Makselahenduse andmete pärimine</h3>
 
 <p>Selle meetodiga saab küsida makselahenduse andmeid. Vajalik on teada makselahenduse <code>id</code> väärtust.</p>
