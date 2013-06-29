@@ -103,7 +103,6 @@
     <li><code>account_nr</code> - Konto number (kui on määratud)</li>
     <li><code>key_size</code> - Privaatvõtme suurus (kui on määratud)</li>
     <li><code>return_url</code> - Tagasisuunamise aadress peale makse sooritamist (kui on määratud)</li>
-    <li><code>expiration_time</code> - sertifikaadi aegumise aeg</li>
     <li><code>private_key</code> - salajane võti panka mineva makse andmete allkirjastamiseks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
     <li><code>bank_certificate</code> - panga sertifikaat pangast saabunud maksekinnituse kontrolliks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
     <li><code>mac_key</code> - Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks (ainult Nordea puhul)</li>
@@ -127,8 +126,6 @@
         "payment_url": "https://pangalink.net/banklink/ipizza",
         "type": "ipizza",
         "name": "Testkonto",
-        "expiration_time": "Sun, 25 Jun 2023 09:26:49 GMT",
-        "key_size": 1024,
         "private_key": "-----BEGIN RSA PRIVATE KEY----- ...",
         "bank_certificate": "-----BEGIN CERTIFICATE----- ..."
     }
@@ -167,7 +164,6 @@
     <li><code>account_nr</code> - Konto number (kui on määratud)</li>
     <li><code>key_size</code> - Privaatvõtme suurus (kui on määratud)</li>
     <li><code>return_url</code> - Tagasisuunamise aadress peale makse sooritamist (kui on määratud)</li>
-    <li><code>expiration_time</code> - sertifikaadi aegumise aeg</li>
     <li><code>private_key</code> - salajane võti panka mineva makse andmete allkirjastamiseks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
     <li><code>bank_certificate</code> - panga sertifikaat pangast saabunud maksekinnituse kontrolliks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
     <li><code>mac_key</code> - Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks (ainult Nordea puhul)</li>
@@ -195,8 +191,6 @@
         "payment_url": "https://pangalink.net/banklink/ipizza",
         "type": "ipizza",
         "name": "Testkonto",
-        "expiration_time": "Sun, 25 Jun 2023 09:26:49 GMT",
-        "key_size": 1024,
         "private_key": "-----BEGIN RSA PRIVATE KEY----- ...",
         "bank_certificate": "-----BEGIN CERTIFICATE----- ..."
     }
@@ -224,5 +218,6 @@
 <h3>API muudatuste ajalugu</h3>
 
 <ul>
+    <li><strong>29.06.2013</strong> - kustutatud makselahenduse andmetest <code>expiration_time</code> parameeter seoses sertifikaatide aegumise peatamisega</li>
     <li><strong>27.06.2013</strong> - lisatud esimene API versioon, lubatud makselahenduste GET, POST ja DELETE</li>
 </ul>

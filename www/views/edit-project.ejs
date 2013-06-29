@@ -10,14 +10,6 @@
 
     <h4>Sertifikaadi valikud</h4>
 
-    <% if(userCertificate.expires > new Date()){%>
-        <p>Makselahenduse sertifikaat kehtib kuni <code><%= userCertificate.expires %></code></p>
-    <% } %>
-
-    <% if(userCertificate.expires <= new Date()){%>
-        <p><strong>Makselahenduse sertifikaat on aegunud!</strong> Makselahenduse kasutamiseks pead genereerima uue sertifikaadi</p>
-    <% } %>
-
     <div class="control-group <% if(validation.keyBitsize){%>error<%}%>"  style="<%= bank != "nordea" ? "display: block;" : "display:none;" %>">
         <label class="control-label" for="keyBitsize">Võtme pikkus</label>
         <div class="controls">
@@ -35,7 +27,7 @@
     </div>
 
     <label class="checkbox">
-      <input type="checkbox" value="uus" name="regenerate" id="regenerate" <% if(userCertificate.expires <= new Date()){%>checked<%}%>/>
+      <input type="checkbox" value="uus" name="regenerate" id="regenerate"/>
       Genereeri uus sertifikaat (vana sertifikaat kaotab kehtivuse)
     </label>
 

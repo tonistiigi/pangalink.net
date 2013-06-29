@@ -61,22 +61,6 @@
             </td>
         </tr>
 
-        <tr>
-            <th>
-                Sertifikaadi kehtivus
-            </th>
-            <td>
-                <% if(project.userCertificate.expires > new Date()){%>
-                    <i class="icon-ok-sign"></i> kehtib kuni <em><%= project.userCertificate.expires %></em>
-                <% } %>
-
-                <% if(project.userCertificate.expires < new Date()){%>
-                    <i class="icon-exclamation-sign"></i> Sertifikaat on aegunud! <a class="btn btn-mini" href="/project/<%= project._id %>/regenerate" onclick="return confirm('Kas oled kindel, et soovid sertifikaati uuendada?')"><i class="icon-refresh"></i> Genereeri uus sertifikaat</a>
-                <% } %>
-
-            </td>
-        </tr>
-
         <% if(banks[project.bank].type == "ipizza" || banks[project.bank].type == "ec"){ %>
 
             <tr>
