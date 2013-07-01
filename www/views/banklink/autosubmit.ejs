@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <meta charset="<%= (typeof payment == "object" ? payment.charset : "") || "utf-8" %>">
+        <title>Pangalink.net &raquo; testmakse</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Andris Reinman">
+
+        <% if(method == "GET"){%>
+            <meta http-equiv="refresh" content="0; url=<%= target %>">
+        <%}%>
+    </head>
+    <body>
+
+        <p>Makse automaatselt <%= {"PAYED": "teostatud", "CANCELLED": "katkestatud", "REJECTED": "tagasi lükatud"}[payment.state] %>, suunatakse tagasi kaupmehe juurde...</p>
+
+<% if(method == "POST"){%>
+
+    <form id="submit-form" method="POST" action="<%= target %>">
+
+        <% Object.keys(payment.responseFields).forEach(function(key){%>
+            <input type="hidden" name="<%= key %>" value="<%= payment.responseFields[key] %>" />
+        <% }) %>
+
+        <p>Juhul, kui automaatne ümbersuunamine ei toiminud, <input type="submit" value="kliki siia"></p>
+
+    </form>
+
+<%}%>
+
+<% if(method == "GET"){%>
+    <p>Juhul, kui automaatne ümbersuunamine ei toiminud, <a href="<%= target %>">kliki siia</a></p>
+<%}%>
+
+<p>&copy; 2011 - <%= new Date().getFullYear() %> <a href="/">pangalink.net</a>, Andris Reinman <a href="mailto:andris@kreata.ee">andris@kreata.ee</a></p>
+
+<% if(method == "POST"){%>
+    <script>
+        document.getElementById("submit-form").submit();
+    </script>
+<%}%>
+
+</body>
+</html>

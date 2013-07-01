@@ -7,7 +7,7 @@
 
 <% if(method == "POST"){%>
 
-    <form method="POST" action="<%= target %>">
+    <form id="submit-form" method="POST" action="<%= target %>">
 
         <% Object.keys(payment.responseFields).forEach(function(key){%>
             <input type="hidden" name="<%= key %>" value="<%= payment.responseFields[key] %>" />
@@ -16,6 +16,12 @@
         <button type="submit" class="btn btn-info">Tagasi kaupmehe juurde</button>
 
     </form>
+
+    <% if(payment.autoSubmit){%>
+    <script>
+        document.getElementById("submit-form").submit();
+    </script>
+    <% } %>
 
 <%}%>
 

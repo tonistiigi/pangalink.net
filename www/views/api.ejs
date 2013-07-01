@@ -20,6 +20,13 @@
 <ul>
     <li><code>PANGALINK_NAME</code> - määrab ära maksja nime maksevormis (vaikimisi "Tõõger Leõpäöld")</li>
     <li><code>PANGALINK_ACCOUNT</code> - määrab ära maksja konto maksevormis (vaikimisi seotud panga tüübiga)</li>
+    <li><code>PANGALINK_AUTOPAY</code> - automaatselt aktsepteerib/keeldub maksest ja suunab tagasi kaupmehe lehele. Võimalikud väärtused on:
+        <ul>
+            <li><code>accept</code> - makse teostatakse</li>
+            <li><code>cancel</code> - makse katkestatakse</li>
+            <li><code>reject</code> - makse lükatakse tagasi tehnilistel põhjustel</li>
+        </ul>
+    </li>
 </ul>
 
 <h3>HTTP API</h3>
@@ -231,6 +238,7 @@
 <h3>API muudatuste ajalugu</h3>
 
 <ul>
+    <li><strong>01.07.2013</strong> - lisatud lisaparameetrite võimalus (PANGALINK_NAME, PANGALINK_ACCOUNT, PANGALINK_AUTOPAY)</li>
     <li><strong>29.06.2013</strong> - kustutatud makselahenduse andmetest <code>expiration_time</code> parameeter seoses sertifikaatide aegumise peatamisega</li>
     <li><strong>27.06.2013</strong> - lisatud esimene API versioon, lubatud makselahenduste GET, POST ja DELETE</li>
 </ul>
