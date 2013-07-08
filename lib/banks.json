@@ -14,7 +14,21 @@
         "returnMethod": "GET",
         "id": "HP",
         "accountNrPrefix": 22,
-        "accountNrLength": 12
+        "accountNrLength": 12,
+        "fieldLength":{
+            "VK_SERVICE": 4,
+            "VK_VERSION": 3,
+            "VK_SND_ID": 10,
+            "VK_STAMP": 20,
+            "VK_AMOUNT": 17,
+            "VK_CURR": 3,
+            "VK_ACC": 16,
+            "VK_NAME": 70,
+            "VK_REF": 20,
+            "VK_MSG": 300,
+            "VK_RETURN": 60,
+            "VK_LANG": 3
+        }
     },
     "seb": {
         "key": "seb",
@@ -31,7 +45,23 @@
         "id": "EYP",
         "accountNrPrefix": 10,
         "accountNrLength": 14,
-        "utf8length": "bytes"
+        "utf8length": "bytes",
+        "fieldLength":{
+            "VK_SERVICE": 4,
+            "VK_VERSION": 3,
+            "VK_SND_ID": 15,
+            "VK_STAMP": 20,
+            "VK_AMOUNT": 17,
+            "VK_CURR": 3,
+            "VK_ACC": 16,
+            "VK_NAME": 40,
+            "VK_REF": 20,
+            "VK_MSG": 70,
+            "VK_CHARSET": 10,
+            "VK_RETURN": 60,
+            "VK_CANCEL": 60,
+            "VK_LANG": 3
+        }
     },
     "sampo": {
         "key": "sampo",
@@ -43,7 +73,24 @@
         "id": "SAMPOPANK",
         "accountNrPrefix": 33,
         "accountNrLength": 12,
-        "disallowQueryParams": true
+        "disallowQueryParams": true,
+        "fieldLength":{
+            "VK_SERVICE": 4,
+            "VK_VERSION": 3,
+            "VK_SND_ID": 14,
+            "VK_STAMP": 20,
+            "VK_AMOUNT": 17,
+            "VK_CURR": 3,
+            "VK_ACC": 16,
+            "VK_NAME": 70,
+            "VK_REF": 20,
+            "VK_MSG": 210,
+            "VK_RETURN": 150,
+            "VK_LANG": 3
+        },
+        "fieldRegex":{
+            "VK_MSG": {"re": "^[a-z0-9õäöü\\+\\-\\(\\)\\.\\,\\;\\!\\&\\_\\@\\/ ]+$", "flags":"i"}
+        }
     },
     "krediidipank": {
         "key": "krediidipank",
@@ -58,10 +105,27 @@
         "defaultCharset": "ISO-8859-13",
         "forceCharset": "Krediidipanga puhul on kodeeringu parameetri VK_CHARSET kasutamine kohustuslik. Pank ise seda ei nõua, küll aga kasutab sellisel juhul ebastandardset allkirjastamise meetodit.",
         "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_CANCEL",
         "id": "KREP",
+        "allowedServices": [
+            "1002"
+        ],
         "accountNrPrefix": 42,
         "accountNrLength": 13,
-        "utf8length": "bytes"
+        "utf8length": "bytes",
+        "fieldLength":{
+            "VK_SERVICE": 4,
+            "VK_VERSION": 3,
+            "VK_SND_ID": 15,
+            "VK_STAMP": 20,
+            "VK_AMOUNT": 17,
+            "VK_CURR": 3,
+            "VK_REF": 20,
+            "VK_MSG": 70,
+            "VK_RETURN": 200,
+            "VK_CANCEL": 200,
+            "VK_LANG": 3
+        }
     },
     "ipizza": {
         "key": "ipizza",
@@ -156,6 +220,21 @@
         "id": "LHV",
         "accountNrPrefix": 77,
         "accountNrLength": 12,
-        "utf8length": "bytes"
+        "utf8length": "bytes",
+        "fieldLength":{
+            "VK_SERVICE": 4,
+            "VK_VERSION": 3,
+            "VK_SND_ID": 15,
+            "VK_STAMP": 20,
+            "VK_AMOUNT": 17,
+            "VK_CURR": 3,
+            "VK_ACC": 16,
+            "VK_NAME": 70,
+            "VK_REF": 20,
+            "VK_MSG": 210,
+            "VK_RETURN": 60,
+            "VK_LANG": 3,
+            "VK_CHARSET": 12
+        }
     }
 }
