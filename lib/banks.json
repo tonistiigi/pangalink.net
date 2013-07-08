@@ -182,7 +182,52 @@
         "allowedCharsets": [
             "ISO-8859-1",
             "UTF-8"
-        ]
+        ],
+        "fieldLength": {
+            "action": 3,
+            "ver": 3,
+            "id": 10,
+            "ecuno": 12,
+            "eamount": 12,
+            "cur": 3,
+            "datetime": 14,
+            "lang": 2,
+            "charEncoding": 16,
+            "feedBackUrl": 128,
+            "delivery": 1
+        }
+    },
+    "lhv": {
+        "key": "lhv",
+        "type": "ipizza",
+        "name": "LHV Emulaator",
+        "charset": "VK_CHARSET",
+        "allowedCharsets": [
+            "ISO-8859-1",
+            "UTF-8",
+            "WINDOWS-1257"
+        ],
+        "returnAddress": "VK_RETURN",
+        "cancelAddress": "VK_RETURN",
+        "id": "LHV",
+        "accountNrPrefix": 77,
+        "accountNrLength": 12,
+        "utf8length": "bytes",
+        "fieldLength":{
+            "VK_SERVICE": 4,
+            "VK_VERSION": 3,
+            "VK_SND_ID": 15,
+            "VK_STAMP": 20,
+            "VK_AMOUNT": 17,
+            "VK_CURR": 3,
+            "VK_ACC": 16,
+            "VK_NAME": 70,
+            "VK_REF": 20,
+            "VK_MSG": 210,
+            "VK_RETURN": 60,
+            "VK_LANG": 3,
+            "VK_CHARSET": 12
+        }
     },
     "swedbank.lv": {
         "key": "swedbank.lv",
@@ -223,37 +268,5 @@
         "id": "HP",
         "accountNrPrefix": 22,
         "accountNrLength": 12
-    },
-    "lhv": {
-        "key": "lhv",
-        "type": "ipizza",
-        "name": "LHV Emulaator",
-        "charset": "VK_CHARSET",
-        "allowedCharsets": [
-            "ISO-8859-1",
-            "UTF-8",
-            "WINDOWS-1257"
-        ],
-        "returnAddress": "VK_RETURN",
-        "cancelAddress": "VK_RETURN",
-        "id": "LHV",
-        "accountNrPrefix": 77,
-        "accountNrLength": 12,
-        "utf8length": "bytes",
-        "fieldLength":{
-            "VK_SERVICE": 4,
-            "VK_VERSION": 3,
-            "VK_SND_ID": 15,
-            "VK_STAMP": 20,
-            "VK_AMOUNT": 17,
-            "VK_CURR": 3,
-            "VK_ACC": 16,
-            "VK_NAME": 70,
-            "VK_REF": 20,
-            "VK_MSG": 210,
-            "VK_RETURN": 60,
-            "VK_LANG": 3,
-            "VK_CHARSET": 12
-        }
     }
 }
