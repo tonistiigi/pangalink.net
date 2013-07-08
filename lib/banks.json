@@ -149,7 +149,26 @@
         "rejectAddress": "REJECT",
         "id": "NORDEA",
         "accountNrPrefix": 17,
-        "accountNrLength": 11
+        "accountNrLength": 11,
+        "fieldLength": {
+            "VERSION": 4,
+            "STAMP": 20,
+            "RCV_ID": 15,
+            "RCV_ACCOUNT": 21,
+            "RCV_NAME": 30,
+            "LANGUAGE": 1,
+            "AMOUNT": 19,
+            "REF": 16,
+            "TAX_CODE": 28,
+            "DATE": 10,
+            "MSG": 210,
+            "RETURN": 256,
+            "CANCEL": 256,
+            "REJECT": 256,
+            "CONFIRM": 3,
+            "KEYVERS": 4,
+            "CUR": 3
+        }
     },
     "ec": {
         "key": "ec",
