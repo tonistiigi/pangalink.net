@@ -200,7 +200,7 @@
 
     <h3>Väljuva päringu andmed</h3>
 
-    <h4><%= payment.returnMethod %> <%= payment.state == "PAYED" ? payment.successTarget : payment.cancelTarget %></h4>
+    <h4><%= payment.returnMethod %> <%= payment.state == "PAYED" ? payment.successTarget : (payment.state == "REJECTED" ? payment.rejectTarget: payment.cancelTarget) %></h4>
 
     <hr>
 
