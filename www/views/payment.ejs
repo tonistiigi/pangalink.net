@@ -189,9 +189,11 @@
 <p>Allkirja kontrollimiseks <a href="/project/<%= project._id %>/user_cert.pem">kasutaja sertifikaadiga</a> kasutati järgmist stringi:</p>
 <pre><%= payment.hash %></pre>
 
-<a class="btn" href="/payment/<%= payment._id %>/scripts/send.php" target="_blank"><i class="icon-download"></i>send.php</a>
+<p>
+<a class="btn" href="/payment/<%= payment._id %>/scripts/send.php" target="_blank"><i class="icon-download"></i>send.php</a> <a class="btn" href="/payment/<%= payment._id %>/scripts/send_with_curl.php" target="_blank"><i class="icon-download"></i>send_with_curl.php</a>
 <small>Lae alla näiteskript, mis allkirjastab need andmed ja koostab päringuvormi</small>
 <%}%>
+</p>
 
 <% if(payment.responseFields && typeof payment.responseFields == "object"){%>
 <hr>
