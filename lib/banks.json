@@ -100,7 +100,7 @@
         "allowedCharsets": [
             "ISO-8859-13",
             "UTF-8",
-            "WIN-1257"
+            "WINDOWS-1257"
         ],
         "defaultCharset": "ISO-8859-13",
         "forceCharset": "Krediidipanga puhul on kodeeringu parameetri VK_CHARSET kasutamine kohustuslik. Pank ise seda ei nõua, küll aga kasutab sellisel juhul ebastandardset allkirjastamise meetodit.",
