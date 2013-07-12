@@ -115,10 +115,11 @@
         <script src="/js/jquery-1.9.1.min.js"></script>
         <script src="/bootstrap/js/bootstrap.min.js"></script>
 
+        <% if(googleAnalyticsID){%>
         <script type="text/javascript">
 
               var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', 'UA-51322-38']);
+              _gaq.push(['_setAccount', '<%= googleAnalyticsID %>']);
               _gaq.push(['_trackPageview']);
 
               (function() {
@@ -128,6 +129,7 @@
               })();
 
         </script>
+        <%}%>
 
     </body>
 </html>

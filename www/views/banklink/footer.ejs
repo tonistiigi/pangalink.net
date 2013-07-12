@@ -9,10 +9,11 @@
           </div>
         </div>
 
+        <% if(googleAnalyticsID){%>
         <script type="text/javascript">
 
               var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', 'UA-51322-38']);
+              _gaq.push(['_setAccount', '<%= googleAnalyticsID %>']);
               _gaq.push(['_trackPageview']);
 
               (function() {
@@ -22,5 +23,6 @@
               })();
 
         </script>
+        <%}%>
     </body>
 </html>

@@ -94,5 +94,9 @@
     "keyBitsize": 2048,
 
     "#": "Allow everybody to access this payment log",
-    "demoPayment": "5170f8369f6fbc7034000001"
+    "demoPayment": "5170f8369f6fbc7034000001",
+
+    "#": "Google Analytics ID",
+    "googleAnalyticsID": false
+
 }
