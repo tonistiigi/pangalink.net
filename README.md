@@ -50,3 +50,5 @@ Lisa rakendus automaatselt käivitatavate rakenduste nimekirja
 ## Litsents
 
 **MIT**
+
+
