@@ -3,17 +3,20 @@
     <h1><%= title %></h1>
 </div>
 
-<p class="lead"><%= hostname %> on pangalingi testimise teenus, mis võimaldab arendajal testida pangalingi toimivust ilma, et oleks vaja sõlmida pangaga mingeid lepinguid, vahetada sertifikaate vms.</p>
+<p class="lead"><%= title %> on pangalingi testimise teenus, mis võimaldab arendajal testida pangalingi toimivust ilma, et oleks vaja sõlmida pangaga mingeid lepinguid, vahetada sertifikaate vms.</p>
 
-<p>Nimelt <em><%= hostname %></em> genereerib arendajale vastavad sertifikaadid ning unikaalse kliendi tunnuskoodi testimiseks ise ning arendaja saab kasutada neid andmeid oma pangalingi rakenduses.</p>
+<p>Nimelt <em><%= hostname %></em> genereerib arendajale vastavad sertifikaadid ning unikaalse kliendi tunnuskoodi testimiseks ise ning arendaja saab kasutada neid andmeid oma pangalingi rakenduses. Kui nüüd klikata arendaja rakenduses või veebipoes nupule "Maksa," ei suunata kasutajat mitte päris panka, vaid <em><%= hostname %></em> netipanga emulaatorile, kus on võimalik tehtud päringu kehtivust uurida ning lõpuks sooritada ka test maksekorraldus.</p>
 
-<p>Kui nüüd klikata arendaja rakenduses nupule "Maksa," ei suunata kasutajat mitte päris panka, vaid <em><%= hostname %></em> netipanga emulaatorile, kus on võimalik tehtud päringu kehtivust uurida ning lõpuks sooritada ka test maksekorraldus.</p>
+<div class="bs-callout bs-callout-warning">
+    <h4><%= title %> on esimene valik pangalinkide testimiseks</h4>
+    <p>Kas teadsid, et praeguseks kasutavad peaaegu kõik arendajad pangalinkide testimiseks just <em><%= hostname %></em> teenust? Unusta 1€ testmaksed läbi panga ning sellega seonduva raamatupidamisliku peavalu - <em><%= hostname %></em> automatiseerib kõik pangalinkidega seonduva täiesti tasuta. Päris raha testimiseks kasutada pole enam vaja.</p>
+</div>
 
-<p>Makselahenduste silumise eesmärgil on kõik sooritatud maksekorralduste andmed logitud. Salvestatakse kõik vormiväljad, HTTP päringute päised, automaatvastuste sisu jne. (salvestatud andmete näite <a href="/payment/<%= demoPayment %>">leiab siit</a>). Samuti annab <em><%= hostname %></em> teada erinevatest vigadest ja nende põhjustest. Logitud andmeid näeb ainult nende omanik, kõrvalised isikud sellele ligi ei pääse.</p>
-
-<h3>Kuidas alustada</h3>
+<h3>Kuidas alustada?</h3>
 
 <p>Alustamiseks tuleks <a href="/join">luua endale konto</a> ning seejärel <a href="/add-project">lisada uus makselahendus</a>, millega saad enda rakenduse jaoks vajaliku kasutajatunnuse, salajase võtme ning panga sertifikaadi.</p>
+
+<p>Makselahenduste silumise eesmärgil on kõik sooritatud maksekorralduste andmed logitud. Salvestatakse kõik vormiväljad, HTTP päringute päised, automaatvastuste sisu jne. (salvestatud andmete näite <a href="/payment/<%= demoPayment %>">leiab siit</a>). Samuti annab <em><%= hostname %></em> teada erinevatest vigadest ja nende põhjustest. Logitud andmeid näeb ainult nende omanik, kõrvalised isikud sellele ligi ei pääse.</p>
 
 <h3>Kasutustingimused</h3>
 <p><em><%= hostname %></em> teenus on tasuta nii era-/õppe- kui ka kommertseesmärkideks. Teenuse kasutamine kurjade eesmärkide täitmiseks on rangelt keelatud. <em><%= hostname %></em> teenus on mõeldud kasutamiseks põhimõttel "nagu on" ning <em><%= hostname %></em> ei vastuta vähimalgi määral teenuse (ebasihipärasest) kasutamisest tekkinud kahjude eest. Reeglite rikkumisele järgneb genereeritud sertifikaadi enneaegne tühistamine.</p>
