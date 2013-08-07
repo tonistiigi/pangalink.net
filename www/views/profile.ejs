@@ -1,62 +1,67 @@
-<form action="/profile" method="post">
+<div class="page-header">
+    <h1>Muuda oma profiili</h1>
+</div>
 
-    <div class="page-header">
-        <h2>Muuda oma profiili</h2>
-    </div>
+<form action="/profile" method="post" class="form-horizontal">
 
-    <div class="control-group <% if(validation.name){%>error<%}%>">
-        <label class="control-label" for="name">Sinu nimi</label>
-        <div class="controls">
-            <input class="span3" type="text" name="name" id="name" value="<%= name %>" required/>
+    <div class="form-group <% if(validation.name){%>has-error<%}%>">
+        <label class="col-lg-2 control-label" for="name">Sinu nimi</label>
+        <div class="col-lg-6">
+            <input class="form-control" type="text" name="name" id="name" value="<%= name %>" required/>
             <% if(validation.name){%>
-                <span class="help-inline"><%= validation.name %></span>
+                <span class="help-block"><%= validation.name %></span>
             <%}%>
         </div>
     </div>
 
-    <div class="control-group <% if(validation.company){%>error<%}%>">
-        <label class="control-label" for="company">Ettevõtte nimi</label>
-        <div class="controls">
-            <input class="span3" type="text" name="company" id="company" value="<%= company %>" required/>
+    <div class="form-group <% if(validation.company){%>has-error<%}%>">
+        <label class="col-lg-2 control-label" for="company">Ettevõtte nimi</label>
+        <div class="col-lg-6">
+            <input class="form-control" type="text" name="company" id="company" value="<%= company %>" required/>
             <% if(validation.company){%>
-                <span class="help-inline"><%= validation.company %></span>
+                <span class="help-block"><%= validation.company %></span>
             <%}%>
         </div>
     </div>
 
-    <div class="control-group <% if(validation.username){%>error<%}%>">
-        <label class="control-label" for="username">E-posti aadress</label>
-        <div class="controls">
-            <input class="span3" type="email" name="username" id="username" value="<%= username %>" disabled/>
+    <div class="form-group <% if(validation.username){%>has-error<%}%>">
+        <label class="col-lg-2 control-label" for="username">E-posti aadress</label>
+        <div class="col-lg-6">
+            <input class="form-control" type="email" name="username" id="username" value="<%= username %>" disabled/>
             <% if(validation.username){%>
-                <span class="help-inline"><%= validation.username %></span>
+                <span class="help-block"><%= validation.username %></span>
             <%}%>
         </div>
     </div>
 
-    <hr/>
+    <div class="bs-callout bs-callout-warning">
+      <h4>Parooli vahetus</h4>
+      <p>Jäta järgnevad väljad tühjaks, kui ei soovi parooli muuta</p>
+    </div>
 
-    <p><strong>Jäta parooli väljad tühjaks, kui ei soovi parooli muuta</strong></p>
-
-    <div class="control-group <% if(validation.password){%>error<%}%>">
-        <label class="control-label" for="password">Parool</label>
-        <div class="controls">
-            <input class="span3" type="password" name="password" id="password"/>
+    <div class="form-group <% if(validation.password){%>has-error<%}%>">
+        <label class="col-lg-2 control-label" for="password">Parool</label>
+        <div class="col-lg-6">
+            <input class="form-control" type="password" name="password" id="password"/>
             <% if(validation.password){%>
-                <span class="help-inline"><%= validation.password %></span>
+                <span class="help-block"><%= validation.password %></span>
             <%}%>
         </div>
     </div>
 
-    <div class="control-group <% if(validation.password2){%>error<%}%>">
-        <label class="control-label" for="password2">Parooli kordus</label>
-        <div class="controls">
-            <input class="span3" type="password" name="password2" id="password2"/>
+    <div class="form-group <% if(validation.password2){%>has-error<%}%>">
+        <label class="col-lg-2 control-label" for="password2">Korda parooli</label>
+        <div class="col-lg-6">
+            <input class="form-control" type="password" name="password2" id="password2"/>
             <% if(validation.password2){%>
-                <span class="help-inline"><%= validation.password2 %></span>
+                <span class="help-block"><%= validation.password2 %></span>
             <%}%>
         </div>
     </div>
 
-    <button type="submit" class="btn">Muuda oma profiili</button>
+    <div class="form-group">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6"><button type="submit" class="btn">Uuenda profiili andmeid</button></div>
+    </div>
+
 </form>

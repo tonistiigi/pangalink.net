@@ -1,87 +1,24 @@
+
 <div class="page-header">
-    <h2><%= title %></h2>
+    <h1><%= title %></h1>
 </div>
 
-<p><a href="/"><%= hostname %></a> on pangalingi testimise teenus, mis võimaldab arendajal testida pangalingi toimivust ilma, et oleks vaja sõlmida pangaga mingeid lepinguid, vahetada sertifikaate vms. Nimelt <a href="/"><%= hostname %></a> genereerib arendajale vastavad sertifikaadid ning unikaalse kliendi tunnuskoodi testimiseks ise ning arendaja saab kasutada neid andmeid oma pangalingi rakenduses.</p>
+<p class="lead"><%= hostname %> on pangalingi testimise teenus, mis võimaldab arendajal testida pangalingi toimivust ilma, et oleks vaja sõlmida pangaga mingeid lepinguid, vahetada sertifikaate vms.</p>
 
-<p>Kui nüüd klikata arendaja rakenduses nupule "Maksa," ei suunata kasutajat mitte päris panka, vaid <a href="/"><%= hostname %></a> netipanga emulaatorile, kus on võimalik tehtud päringu kehtivust uurida ning lõpuks sooritada ka test maksekorraldus.</p>
+<p>Nimelt <em><%= hostname %></em> genereerib arendajale vastavad sertifikaadid ning unikaalse kliendi tunnuskoodi testimiseks ise ning arendaja saab kasutada neid andmeid oma pangalingi rakenduses.</p>
 
-<p>Makselahenduste silumise eesmärgil on kõik sooritatud maksekorralduste andmed logitud. Salvestatakse kõik vormiväljad, HTTP päringute päised, automaatvastuste sisu jne. (salvestatud andmete näite <a href="/payment/<%= demoPayment %>">leiab siit</a>). Samuti annab <a href="/"><%= hostname %></a> teada erinevatest vigadest ja nende põhjustest. Logitud andmeid näeb ainult nende omanik, kõrvalised isikud sellele ligi ei pääse.</p>
+<p>Kui nüüd klikata arendaja rakenduses nupule "Maksa," ei suunata kasutajat mitte päris panka, vaid <em><%= hostname %></em> netipanga emulaatorile, kus on võimalik tehtud päringu kehtivust uurida ning lõpuks sooritada ka test maksekorraldus.</p>
 
-<div class="alert alert-block">
-  <h4>Tähelepanu!</h4>
-  <a href="/"><%= hostname %></a> vanemas versioonis sai sertifikaate luua anonüümselt ning need andmed jäävad kõik kehtima. Vanad pöörduspunktid jäid paralleelselt tööle ja aktsepteerivad vanu sertifikaate kuni nende aegumiseni. Uusi sertifikaate vanas ja vanu sertifikaate uues süsteemis ristkasutada siiski ei saa.
-</div>
-
-<h3>Eelvaade</h3>
-
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-    <li data-target="#myCarousel" data-slide-to="4"></li>
-    <li data-target="#myCarousel" data-slide-to="5"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item">
-        <img src="/assets/img/pangalink-1.png" alt="">
-        <div class="carousel-caption">
-          <h4>Erinevad makselahendused</h4>
-          <p>Registreeri iga projekti või kliendi jaoks omaette makselahendus. Nii saad grupeerida testmaksete logid ning neid erinevate kasutajatega jagada.</p>
-        </div>
-    </div>
-    <div class="item">
-        <img src="/assets/img/pangalink-2.png" alt="">
-        <div class="carousel-caption">
-          <h4>Maksete logi</h4>
-          <p>Iga makselahenduse jaoks koguneb omaette maksete logi, mille abil saab tagantjärele otsida vigu oma rakenduse lahenduses jne.</p>
-        </div>
-    </div>
-    <div class="item">
-        <img src="/assets/img/pangalink-3.png" alt="">
-        <div class="carousel-caption">
-          <h4>Maksekorralduse teostamine</h4>
-          <p>Maksekorralduse teostamisel näed koheselt vigade teateid ning saad sisestada maksja andmeteks suvalisi väärtusi.</p>
-        </div>
-    </div>
-    <div class="item">
-        <img src="/assets/img/pangalink-4.png" alt="">
-        <div class="carousel-caption">
-          <h4>Maksekorralduse teostamine</h4>
-          <p>Peale maksekorralduse teostamist või katkestamist saab avada maksekorralduse detailvaate.</p>
-        </div>
-    </div>
-    <div class="item">
-        <img src="/assets/img/pangalink-5.png" alt="">
-        <div class="carousel-caption">
-          <h4>Maksekorralduse detailvaade</h4>
-          <p>Kõikide maksekorralduste kohta salvestatakse detailne info, mis sisaldab kõiki seotud andmeid - vormide sisu, HTTP päised jne.</p>
-        </div>
-    </div>
-    <div class="item">
-        <img src="/assets/img/pangalink-6.png" alt="">
-        <div class="carousel-caption">
-          <h4>Ligipääsu lubamine</h4>
-          <p>Iga makselahenduse puhul saab määrata teised kasutajad, kellel on täielik ligipääs selle makselahenduse andmetele, kuid mitte muudele.</p>
-        </div>
-    </div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
+<p>Makselahenduste silumise eesmärgil on kõik sooritatud maksekorralduste andmed logitud. Salvestatakse kõik vormiväljad, HTTP päringute päised, automaatvastuste sisu jne. (salvestatud andmete näite <a href="/payment/<%= demoPayment %>">leiab siit</a>). Samuti annab <em><%= hostname %></em> teada erinevatest vigadest ja nende põhjustest. Logitud andmeid näeb ainult nende omanik, kõrvalised isikud sellele ligi ei pääse.</p>
 
 <h3>Kuidas alustada</h3>
 
 <p>Alustamiseks tuleks <a href="/join">luua endale konto</a> ning seejärel <a href="/add-project">lisada uus makselahendus</a>, millega saad enda rakenduse jaoks vajaliku kasutajatunnuse, salajase võtme ning panga sertifikaadi.</p>
 
 <h3>Kasutustingimused</h3>
-<p><a href="/"><%= hostname %></a> teenus on tasuta nii era-/õppe- kui ka kommertseesmärkideks. Teenuse kasutamine kurjade eesmärkide täitmiseks on rangelt keelatud. <a href="/"><%= hostname %></a> teenus on mõeldud kasutamiseks põhimõttel "nagu on" ning <a href="/"><%= hostname %></a> ei vastuta vähimalgi määral teenuse (ebasihipärasest) kasutamisest tekkinud kahjude eest. Reeglite rikkumisele järgneb genereeritud sertifikaadi enneaegne tühistamine.</p>
+<p><em><%= hostname %></em> teenus on tasuta nii era-/õppe- kui ka kommertseesmärkideks. Teenuse kasutamine kurjade eesmärkide täitmiseks on rangelt keelatud. <em><%= hostname %></em> teenus on mõeldud kasutamiseks põhimõttel "nagu on" ning <em><%= hostname %></em> ei vastuta vähimalgi määral teenuse (ebasihipärasest) kasutamisest tekkinud kahjude eest. Reeglite rikkumisele järgneb genereeritud sertifikaadi enneaegne tühistamine.</p>
 
 
 <h3>Veebimajutus</h3>
-<p><a href="/"><%= hostname %></a> teenust majutab <a href="https://www.zone.ee/">ZONE.EE</a></p>
+<p><em><%= hostname %></em> teenust majutab <a href="https://www.zone.ee/">ZONE.EE</a></p>
 <p><a href="https://www.zone.ee/et/"><img src="/images/zone.png" width="249" height="50"/></a></p>

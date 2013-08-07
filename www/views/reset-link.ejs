@@ -1,15 +1,19 @@
-<form action="/reset-link" method="post">
+<div class="page-header">
+    <h1>Uuenda parooli</h1>
+</div>
 
-    <div class="page-header">
-        <h2>Uuenda parooli</h2>
-    </div>
+<form action="/reset-link" method="post" class="form-horizontal">
 
-    <div class="control-group">
-        <label class="control-label" for="username">E-posti aadress</label>
-        <div class="controls">
-           <input class="span3" type="email" name="username" id="username" value="<%= username %>" placeholder="user@example.com" required/>
+    <div class="form-group">
+        <label class="col-lg-2 control-label" for="username">E-posti aadress</label>
+        <div class="col-lg-6">
+           <input class="form-control" type="email" name="username" id="username" value="<%= username %>" placeholder="user@example.com" required/>
         </div>
     </div>
 
-    <button type="submit" class="btn">Uuenda parool</button>
+    <div class="form-group">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6"><button type="submit" class="btn">Uuenda parool</button></div>
+    </div>
+
 </form>

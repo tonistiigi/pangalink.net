@@ -4,7 +4,7 @@
 </div>
 
 <% if(payment.errors && payment.errors.length){%>
-    <div class="alert alert-error">
+    <div class="alert alert-danger">
       <strong>Tähelepanu!</strong> Maksekorralduse töötlemisel ilmnes olulisi vigu.
     </div>
     <p>Järgnevad vead takistasid maksekorralduse edasist täitmist:</p>
@@ -190,7 +190,7 @@
 <pre><%= payment.hash %></pre>
 
 <p>
-<a class="btn" href="/payment/<%= payment._id %>/scripts/send.php" target="_blank"><i class="icon-download"></i>send.php</a> <a class="btn" href="/payment/<%= payment._id %>/scripts/send_with_curl.php" target="_blank"><i class="icon-download"></i>send_with_curl.php</a>
+<a href="/payment/<%= payment._id %>/scripts/send.php" target="_blank"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> send.php</a> <a href="/payment/<%= payment._id %>/scripts/send_with_curl.php" target="_blank"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> send_with_curl.php</a>
 <small>Lae alla näiteskript, mis allkirjastab need andmed ja koostab päringuvormi</small>
 <%}%>
 </p>
@@ -229,7 +229,7 @@
 <p>Vastuse allkirjastamiseks <a href="/project/<%= project._id %>/bank_key.pem">panga võtmega</a> kasutati järgmist stringi:</p>
 <pre><%= payment.responseHash %></pre>
 
-<a class="btn" href="/payment/<%= payment._id %>/scripts/receive.php" target="_blank"><i class="icon-download"></i>receive.php</a>
+<a href="/payment/<%= payment._id %>/scripts/receive.php" target="_blank"class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> receive.php</a>
 <small>Lae alla näiteskript, mis kontrollib nende andmetega allkirja</small>
 <%}%>
 
@@ -238,7 +238,7 @@
 
     <% if(!payment.autoResponse.statusCode){%>
 
-    <div class="alert alert-error">
+    <div class="alert alert-danger">
       Automaatpäring domeenile <strong><%= host %></strong> ebaõnnestus<% if(payment.autoResponse.error){%>: <strong><%= payment.autoResponse.error %></strong><%}%>
     </div>
 

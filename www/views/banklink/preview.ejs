@@ -26,7 +26,7 @@
                     <label for="payment_name">Makse sooritaja nimi</label>
                 </td>
                 <td>
-                    <input type="text" id="payment_snd_name" name="senderName" placeholder="Tõõger Leõpäöld" value="<%= payment.senderName || "Tõõger Leõpäöld" %>" class="span4"/>
+                    <input type="text" id="payment_snd_name" name="senderName" placeholder="Tõõger Leõpäöld" value="<%= payment.senderName || "Tõõger Leõpäöld" %>" class="form-control"/>
                 </td>
             </tr>
         <% } %>
@@ -48,7 +48,7 @@
                     <label for="payment_snd_account">Makse sooritaja konto</label>
                 </td>
                 <td>
-                    <input type="text" id="payment_snd_account" name="senderAccount" placeholder="<%= payment.senderAccount %>" value="<%= payment.senderAccount %>" class="span4"/>
+                    <input type="text" id="payment_snd_account" name="senderAccount" placeholder="<%= payment.senderAccount %>" value="<%= payment.senderAccount %>" class="form-control"/>
                 </td>
             </tr>
         <% } %>
@@ -130,6 +130,8 @@
     <% } %>
 
     </form>
+
+    <hr/>
 
     <% include info %>
 

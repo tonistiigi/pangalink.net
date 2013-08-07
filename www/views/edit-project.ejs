@@ -1,40 +1,42 @@
-<form action="/edit-project" method="post">
+<form action="/edit-project" method="post" class="form-horizontal">
 
     <div class="page-header">
-        <h2>Muuda makselahenduse andmeid</h2>
+        <h1>Muuda makselahenduse andmeid</h1>
     </div>
 
     <% include project-form %>
 
+    <h3>Sertifikaadi valikud</h3>
+
     <hr />
 
-    <h4>Sertifikaadi valikud</h4>
-
-    <div class="control-group <% if(validation.keyBitsize){%>error<%}%>"  style="<%= bank != "nordea" ? "display: block;" : "display:none;" %>">
-        <label class="control-label" for="keyBitsize">Võtme pikkus</label>
-        <div class="controls">
-            <select name="keyBitsize" id="keyBitsize">
+    <div class="form-group<% if(validation.keyBitsize){%> has-error<%}%>">
+        <label class="col-lg-2 control-label" for="keyBitsize">Allkirjastamise algoritm</label>
+        <div class="col-lg-6">
+            <select class="form-control" name="keyBitsize" id="keyBitsize">
                 <option <% if(keyBitsize == 1024){ %> selected<% } %> value="1024">1024 bitti</option>
                 <option <% if(keyBitsize == 2048 || !keyBitsize){ %> selected<% } %> value="2048">2048 bitti</option>
                 <option <% if(keyBitsize == 4096){ %> selected<% } %> value="4096">4096 bitti</option>
             </select>
-
             <% if(validation.keyBitsize){%>
-                <span class="help-inline"><%= validation.keyBitsize %></span>
+                <span class="help-block"><%= validation.keyBitsize %></span>
             <%}%>
+            <span class="help-block">Võtme pikkuse vahetamine mõjutab ainult edaspidi genereeritavaid võtmeid, aga mitte hetkel kasutusel olevat</span>
         </div>
-        <span class="help-block">Võtme pikkuse vahetamine mõjutab ainult edaspidi genereeritavaid võtmeid, aga mitte hetkel kasutusel olevat</span>
     </div>
 
-    <label class="checkbox">
-      <input type="checkbox" value="uus" name="regenerate" id="regenerate"/>
-      Genereeri uus sertifikaat (vana sertifikaat kaotab kehtivuse)
-    </label>
-
-    <hr />
+    <div class="form-group<% if(validation.regenerate){%> has-error<%}%>">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6">
+            <label class="checkbox">
+                <input type="checkbox" name="regenerate" value="true">
+                Genereeri uus sertifikaat (vana sertifikaat kaotab kehtivuse)
+            </label>
+        </div>
+    </div>
 
     <div class="pull-right">
-        <a class="btn btn-danger" href="/delete-project/<%= id %>" onclick="return confirm('Kas oled ikka kindel, seda otsust ei ole võimalik hiljem enam tagasi võtt?')"><i class="icon-minus-sign"></i> Kustuta see makselahendus</a>
+        <a class="btn btn-danger" href="/delete-project/<%= id %>" onclick="return confirm('Kas oled ikka kindel, seda otsust ei ole võimalik hiljem enam tagasi võtt?')"><span class="glyphicon glyphicon-minus-sign"></span> Kustuta see makselahendus</a>
     </div>
 
     <button type="submit" class="btn">Muuda makselahenduse andmeid</button>

@@ -69,13 +69,12 @@
                 </th>
                 <td>
                     <p>
-                        <a class="btn" href="/project/<%= project._id %>/user_key.pem" target="_blank"><i class="icon-download"></i> user_key.pem</a>
+                        <a href="/project/<%= project._id %>/user_key.pem" target="_blank" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> user_key.pem</a>
                         <small>Selle võtmefailiga tuleb allkirjastada panka mineva makse andmed</small
                     </p>
                     <p>
-                        Võtmefaili sisu:<br />
-                        <textarea class="span6" rows="3" style="font-family: monospace;" onfocus="this.select()" onclick="this.select()"><%= project.userCertificate.clientKey %></textarea>
-                    </p>
+                        <textarea class="form-control" rows="3" style="font-family: monospace;" onfocus="this.select()" onclick="this.select()"><%= project.userCertificate.clientKey %></textarea>
+                    </p> 
                 </td>
             </tr>
 <!--
@@ -105,12 +104,11 @@
                 </th>
                 <td>
                     <p>
-                        <a class="btn" href="/project/<%= project._id %>/bank_cert.pem" target="_blank"><i class="icon-download"></i>bank_cert.pem</a>
+                        <a href="/project/<%= project._id %>/bank_cert.pem" target="_blank" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> bank_cert.pem</a>
                         <small>Selle sertifikaadi abil tuleb kontrollida pangast saabunud maksekinnituse kehtivust</small>
                     </p>
                     <p>
-                        Sertifikaadi sisu:<br />
-                        <textarea class="span6" rows="3" style="font-family: monospace;" onfocus="this.select()" onclick="this.select()"><%= project.bankCertificate.certificate %></textarea>
+                        <textarea class="form-control" rows="3" style="font-family: monospace;" onfocus="this.select()" onclick="this.select()"><%= project.bankCertificate.certificate %></textarea>
                     </p>
                 </td>
             </tr>
@@ -141,7 +139,7 @@
     </table>
 
     <div>
-        <a class="btn btn-info" href="/edit-project/<%= project._id %>"><i class="icon-edit"></i> Muuda makselahenduse andmeid</a>
+        <a class="btn btn-info" href="/edit-project/<%= project._id %>"><span class="glyphicon glyphicon-edit"></span> Muuda makselahenduse andmeid</a>
     </div>
 
   </div>

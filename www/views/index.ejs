@@ -9,65 +9,44 @@
 
         <!-- Le styles -->
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/bootstrap/css/bootstrap-glyphicons.css" rel="stylesheet">
+        <link href="/style/docs.css" rel="stylesheet">
         <link href="/style/custom.css" rel="stylesheet">
         <style>
             body {
                 padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
             }
         </style>
-        <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="/style/docs.css" rel="stylesheet">
-
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="/bootstrap/js/html5shiv.js"></script>
-        <![endif]-->
-
-        <link href="/style/todc-bootstrap.css" rel="stylesheet">
     </head>
 
-    <body data-target=".bs-docs-sidebar" data-spy="scroll" data-twttr-rendered="true">
+    <body>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="/"><%= title %></a>
-                    <div class="nav-collapse collapse">
-                        <!--
-                        <div class="pull-right" style="margin-top: 10px"><a href="https://twitter.com/Pangalink_net" class="twitter-follow-button" data-show-count="false">Follow @Pangalink_net</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-</div>
--->
-                        <ul class="nav">
-                            <% include mainmenu %>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
+        <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+          <div class="container">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><%= title %></a>
+            <div class="nav-collapse collapse bs-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <% include mainmenu %>
+              </ul>
             </div>
+          </div>
         </div>
-
-        <header class="jumbotron subhead" id="overview">
+<!--
+        <div class="bs-header">
           <div class="container">
             <h1><%= title %></h1>
-            <p class="lead">Pangalinkide universaalne testkeskkond</p>
+            <p>Pangalinkide universaalne testkeskkond</p>
           </div>
-        </header>
-
-        <div class="container">
-
+        </div>
+-->
+        <div class="container bs-docs-container">
             <div class="row">
-                <div class="span3 bs-docs-sidebar">
-                    <ul class="nav nav-list bs-docs-sidenav">
-                    <% include mainmenu %>
-                    </ul>
-                </div>
-                <div class="span9">
+                <div class="col-lg-12">
 
                     <% if(messages.success.length || messages.error.length || messages.info.length){%>
                     <p>&nbsp;</p>
@@ -81,7 +60,7 @@
                     <%});%>
 
                     <% messages.error.forEach(function(msg){%>
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
                             <%= msg %>
                         </div>
@@ -94,7 +73,9 @@
                         </div>
                     <%});%>
 
-                    <% include router %>
+                    <div class="bs-docs-section">
+                        <% include router %>
+                    </div>
 
                 </div>
             </div>

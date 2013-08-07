@@ -1,32 +1,30 @@
-<form action="/add-project" method="post">
+<form action="/add-project" method="post" class="form-horizontal">
 
     <div class="page-header">
-        <h2>Loo uus makselahendus</h2>
+        <h1>Loo uus makselahendus</h1>
     </div>
 
     <% include project-form %>
 
+    <h3>Sertifikaadi valikud</h3>
+
     <hr />
 
-    <h4>Sertifikaadi valikud</h4>
-
-    <div class="control-group <% if(validation.keyBitsize){%>error<%}%>">
-        <label class="control-label" for="keyBitsize">Võtme pikkus</label>
-        <div class="controls">
-            <select name="keyBitsize" id="keyBitsize">
+    <div class="form-group<% if(validation.keyBitsize){%> has-error<%}%>">
+        <label class="col-lg-2 control-label" for="keyBitsize">Võtme pikkus</label>
+        <div class="col-lg-6">
+            <select class="form-control" name="keyBitsize" id="keyBitsize">
                 <option <% if(keyBitsize == 1024){ %> selected<% } %> value="1024">1024 bitti</option>
                 <option <% if(keyBitsize == 2048 || !keyBitsize){ %> selected<% } %> value="2048">2048 bitti</option>
                 <option <% if(keyBitsize == 4096){ %> selected<% } %> value="4096">4096 bitti</option>
             </select>
-
             <% if(validation.keyBitsize){%>
-                <span class="help-inline"><%= validation.keyBitsize %></span>
+                <span class="help-block"><%= validation.keyBitsize %></span>
             <%}%>
+            <span class="help-block">Võtme pikkuse valik mõjub ainult Ipizza põhistele pankadele ning Kaardikeskusele, mis kasutavad allkirjastamiseks avaliku võtme süsteemi</span>
         </div>
-        <span class="help-block">Võtme pikkuse valik mõjub ainult Ipizza põhistele pankadele ning Kaardikeskusele, mis kasutavad allkirjastamiseks avaliku võtme süsteemi</span>
     </div>
 
-    <hr>
 
     <button type="submit" class="btn">Loo uus makselahendus</button>
 </form>

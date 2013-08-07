@@ -1,123 +1,143 @@
     <p>Makselahendus sisaldab endas makseks vajalikke kasutajatunnuseid ning sertifikaate. Makselahendused võimaldavad  grupeerida näiteks ühe kliendi või projektiga seotud makseid. Iga tehtud makse logitakse koos kogu sellega seotud infoga ning seda on võimalik hiljem vaadata.</p>
 
-    <h4>Üldised seaded</h4>
+    <h3>Üldised seaded</h3>
+
+    <hr/>
 
     <input type="hidden" name="id" value="<%= id %>"/>
 
     <% if(action == "add"){ %>
-        <div class="control-group <% if(validation.bank){%>error<%}%>">
-            <label class="control-label" for="bank">Vali panga tüüp</label>
-            <div class="controls">
-                <select name="bank" id="bank" onclick="showBankSettings()" onchange="showBankSettings()" required>
+
+        <div class="form-group<% if(validation.bank){%> has-error<%}%>">
+            <label class="col-lg-2 control-label" for="bank">Vali panga tüüp</label>
+            <div class="col-lg-6">
+                <select class="form-control" name="bank" id="bank" onclick="showBankSettings()" onchange="showBankSettings()" required>
                     <option value=""> –– Vali pank –– </option>
                     <% Object.keys(banks).forEach(function(key){ %>
                         <option value="<%= banks[key].key %>" <% if(banks[key].key == bank){%>selected<%}%>><%= banks[key].name %></option>
                     <%})%>
                 </select>
-
                 <% if(validation.bank){%>
-                    <span class="help-inline"><%= validation.bank %></span>
+                    <span class="help-block"><%= validation.bank %></span>
                 <%}%>
             </div>
-            <span class="help-block">Panga tüüpi tagantjärele muuta ei saa</span>
         </div>
+
     <% } %>
 
     <% if(action == "modify"){ %>
         <p>Panga tüüp: <strong><%= banks[bank].name %></strong></p>
     <% } %>
 
-    <div class="control-group <% if(validation.name){%>error<%}%>">
-        <label class="control-label" for="name">Makselahenduse nimetus</label>
-        <div class="controls">
-            <input class="span3" type="text" name="name" id="name" value="<%= name %>" placeholder="Minu makselahendused" required/>
+    <div class="form-group<% if(validation.name){%> has-error<%}%>">
+        <label class="col-lg-2 control-label" for="name">Nimetus</label>
+        <div class="col-lg-6">
+            <input class="form-control" type="text" name="name" id="name" value="<%= name %>"  placeholder="Minu makselahendus" required/>
             <% if(validation.name){%>
-                <span class="help-inline"><%= validation.name %></span>
+                <span class="help-block"><%= validation.name %></span>
             <%}%>
         </div>
     </div>
 
-    <div class="control-group">
-        <label class="control-label" for="description">Makselahenduse kirjeldus</label>
-        <div class="controls">
-            <textarea class="span5" rows="3" id="description" name="description"><%= description %></textarea>
+    <div class="form-group<% if(validation.description){%> has-error<%}%>">
+        <label class="col-lg-2 control-label" for="description">Kirjeldus</label>
+        <div class="col-lg-6">
+            <textarea class="form-control" rows="3" id="description" name="description"><%= description %></textarea>
+            <% if(validation.description){%>
+                <span class="help-block"><%= validation.description %></span>
+            <%}%>
         </div>
     </div>
 
-    <div class="control-group">
-        <label class="control-label" for="authorized">Lubatud kasutajad</label>
-        <div class="controls">
-            <textarea class="span5" rows="3" id="authorized" name="authorized"><%= authorized && authorized.join("\n") || "" %></textarea>
+    <div class="form-group<% if(validation.authorized){%> has-error<%}%>">
+        <label class="col-lg-2 control-label" for="authorized">Kasutajad</label>
+        <div class="col-lg-6">
+            <textarea class="form-control" rows="3" id="authorized" name="authorized"><%= authorized && authorized.join("\n") || "" %></textarea>
+            <% if(validation.authorized){%>
+                <span class="help-block"><%= validation.authorized %></span>
+            <%}%>
+            <span class="help-block">Sisesta eraldi ridadele nende kasutajate e-posti aadressid, kes tohivad selle makselahendusega toimetada (muuta andmeid, näha maksete infot jne)</span>
         </div>
-        <span class="help-block">Sisesta eraldi ridadele nende kasutajate e-posti aadressid, kes tohivad selle makselahendusega toimetada (muuta andmeid, näha maksete infot jne)</span>
     </div>
 
     <div id="soloform" style="<%= bank == "nordea" ? "display: block;" : "display:none;" %>">
-        <hr>
 
-        <h4>Nordea seaded</h4>
+        <h3>Nordea seaded</h3>
+        <hr />
 
-        <div class="control-group <% if(validation.soloAlgo){%>error<%}%>">
-            <label class="control-label" for="soloAlgo">Allkirjastamise algoritm</label>
-            <div class="controls">
-                <select name="soloAlgo" id="soloAlgo">
+        <div class="form-group<% if(validation.soloAlgo){%> has-error<%}%>">
+            <label class="col-lg-2 control-label" for="soloAlgo">Allkirjastamise algoritm</label>
+            <div class="col-lg-6">
+                <select class="form-control" name="soloAlgo" id="soloAlgo">
                     <option <% if(soloAlgo == "md5"){ %> selected<% } %> value="md5">MD5 (vaikimisi)</option>
                     <option <% if(soloAlgo == "sha1"){ %> selected<% } %> value="sha1">SHA1</option>
-                    <!--<option <% if(soloAlgo == "sha256"){ %> selected<% } %> value="sha256">SHA-256</option>-->
                 </select>
-
                 <% if(validation.soloAlgo){%>
-                    <span class="help-inline"><%= validation.soloAlgo %></span>
+                    <span class="help-block"><%= validation.soloAlgo %></span>
                 <%}%>
             </div>
+        </div>
 
-            <label class="checkbox">
-                <input type="checkbox" name="soloAutoResponse" value="true" <%= soloAutoResponse ? "checked" : "" %>>
-                Saada automaatvastus kaupmehe serverile (kasutades SOLOPMT_RETURN aadressi) peale makse sooritamist
-            </label>
+        <div class="form-group<% if(validation.soloAutoResponse){%> has-error<%}%>">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-6">
+                <label class="checkbox">
+                    <input type="checkbox" name="soloAutoResponse" value="true" <%= soloAutoResponse ? "checked" : "" %>>
+                    Saada automaatvastus kaupmehe serverile (kasutades SOLOPMT_RETURN aadressi) peale makse sooritamist
+                </label>
+            </div>
         </div>
     </div>
 
     <div id="ecform" style="<%= bank == "ec" ? "display: block;" : "display:none;" %>">
-        <hr>
 
-        <h4>Pankade kaardikeskuse seaded</h4>
+        <h3>Pankade kaardikeskuse seaded</h3>
 
-        <div class="control-group <% if(validation.ecUrl){%>error<%}%>">
-            <label class="control-label" for="ecUrl">Tagasisuunamise aadress</label>
-            <div class="controls">
-                <input class="span4" type="url" name="ecUrl" id="ecUrl" value="<%= ecUrl %>" placeholder="http://example.com/return_from_ec.php"/>
+        <hr />
 
+        <div class="form-group<% if(validation.ecUrl){%> has-error<%}%>">
+            <label class="col-lg-2 control-label" for="ecUrl">URL</label>
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="ecUrl" id="ecUrl" value="<%= ecUrl %>" placeholder="http://example.com/return_from_ec.php"/>
                 <% if(validation.ecUrl){%>
-                    <span class="help-inline"><%= validation.ecUrl %></span>
+                    <span class="help-block"><%= validation.ecUrl %></span>
                 <%}%>
+                <span class="help-block">Peale makse sooritamist suunatakse maksja siin määratud aadressile</span>
             </div>
-            <span class="help-block">Peale makse sooritamist suunatakse maksja siin määratud aadressile</span>
         </div>
+
     </div>
 
     <div id="ipizzaform" style="<%= bank != "ec" && bank != "nordea" ? "display: block;" : "display:none;" %>">
-        <hr>
 
-        <h4>Ipizza seaded</h4>
+        <h3>Ipizza seaded</h3>
+
+        <hr />
 
         <p>Järgmised andmed on vajalikud teenuskoodi 1002 kasutamiseks ning need defineerivad makse saaja andmed.</p>
 
-        <div class="control-group">
-            <label class="control-label" for="ipizzaReceiverName">Makse saaja nimi</label>
-            <div class="controls">
-                <input class="span4" type="text" name="ipizzaReceiverName" id="ipizzaReceiverName" value="<%= ipizzaReceiverName %>" placeholder="Konto Omanik OÜ"/>
+        <div class="form-group<% if(validation.ipizzaReceiverName){%> has-error<%}%>">
+            <label class="col-lg-2 control-label" for="ipizzaReceiverName">Makse saaja</label>
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="ipizzaReceiverName" id="ipizzaReceiverName" value="<%= ipizzaReceiverName %>" placeholder="Konto Omanik OÜ"/>
+                <% if(validation.ipizzaReceiverName){%>
+                    <span class="help-block"><%= validation.ipizzaReceiverName %></span>
+                <%}%>
+                <span class="help-block">Kui saaja nimi on määramata, kasutatakse vaikimisi makselahenduse nimetust</span>
             </div>
-            <span class="help-block">Kui saaja nimi on määramata, kasutatakse vaikimisi makselahenduse nimetust</span>
         </div>
 
-        <div class="control-group">
-            <label class="control-label" for="ipizzaReceiverAccount">Makse saaja konto</label>
-            <div class="controls">
-                <input class="span4" type="text" name="ipizzaReceiverAccount" id="ipizzaReceiverAccount" value="<%= ipizzaReceiverAccount %>" placeholder="991234567897"/>
+        <div class="form-group<% if(validation.ipizzaReceiverAccount){%> has-error<%}%>">
+            <label class="col-lg-2 control-label" for="ipizzaReceiverAccount">Saaja konto</label>
+            <div class="col-lg-6">
+                <input class="form-control" type="text" name="ipizzaReceiverAccount" id="ipizzaReceiverAccount" value="<%= ipizzaReceiverAccount %>" placeholder="991234567897"/>
+                <% if(validation.ipizzaReceiverAccount){%>
+                    <span class="help-block"><%= validation.ipizzaReceiverAccount %></span>
+                <%}%>
+                <span class="help-block">Kui konto number on määramata, genereeritakse vajadusel selleks suvaline number</span>
             </div>
-            <span class="help-block">Kui konto number on määramata, genereeritakse vajadusel selleks suvaline number</span>
         </div>
+
     </div>
 
     <script>
