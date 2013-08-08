@@ -68,14 +68,14 @@ openssl req -sha1 -new -key private_key.pem -out csr.pem</pre>
     <div class="form-group">
         <label class="col-lg-2 control-label" for="organization">Organisatsioon</label>
         <div class="col-lg-6">
-            <input type="text" class="form-control" name="organization" id="organization" value="Minu ettevõte OÜ"/>
+            <input type="text" class="form-control" name="organization" id="organization" value="Minu ettevõte OÜ" required/>
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-lg-2 control-label" for="organizationUnit">Allasutus (valikuline)</label>
         <div class="col-lg-6">
-            <input type="text" class="form-control" name="organizationUnit" id="organizationUnit" value="banklink" required/>
+            <input type="text" class="form-control" name="organizationUnit" id="organizationUnit" value="banklink"/>
             <span class="help-block">Reeglina soovivad pangad, et selle välja väärtus oleks <code>banklink</code></span>
         </div>
     </div>
