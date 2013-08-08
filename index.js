@@ -2,6 +2,9 @@ var config = require("./config/" + (process.env.NODE_ENV || "development") + ".j
     cluster = require('cluster'),
     numCPUs = config.workerCount || require('os').cpus().length;
 
+// Force support for self-signed certificates
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 if(cluster.isMaster){
 
     console.log("Starting server");
