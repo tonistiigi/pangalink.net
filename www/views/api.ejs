@@ -9,7 +9,7 @@
     <% if(!user){%>
         <a href="/login">Logi sisse</a>, et näha siin oma salajast API võtit<br />
     <% } %>
-    API aadress on <strong>https://<%= apiHost || hostname %>/api/</strong>
+    API aadress on <strong>https://<%= apiHost || hostname %>/</strong>
 </div>
 
 <p>Pangalink.net API koosneb kahest osast - esiteks lisaparameetritest, mida on võimalik kaasa anda maksevormiga ning teiseks HTTP JSON API, mis võimaldab automatiseerida makselahenduste loomisega seonduvat.</p>
@@ -57,7 +57,7 @@
 
 <p>Selle meetodiga saab küsida kasutaja makselahenduste nimekirja.</p>
 
-<h4>GET /api/project</h4>
+<h4>GET /project</h4>
 
 <h5>GET parameetrid</h5>
 
@@ -85,7 +85,7 @@
 
 <h5>Päring</h5>
 
-<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XGET "https://<%= apiHost || hostname %>/api/project?access_token=<%= user && user.token || 12345%>"</pre>
+<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XGET "https://<%= apiHost || hostname %>/project?access_token=<%= user && user.token || 12345%>"</pre>
 
 <h5>Vastus</h5>
 
@@ -114,7 +114,7 @@
 
 <p>Selle meetodiga saab küsida makselahenduse andmeid. Vajalik on teada makselahenduse <code>id</code> väärtust.</p>
 
-<h4>GET /api/project/:project_id</h4>
+<h4>GET /project/:project_id</h4>
 
 <h5>Vastusparameetrid</h5>
 
@@ -140,7 +140,7 @@
 
 <h5>Päring</h5>
 
-<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XGET "https://<%= apiHost || hostname %>/api/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
+<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XGET "https://<%= apiHost || hostname %>/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
 
 <h5>Vastus</h5>
 
@@ -161,7 +161,7 @@
 
 <p>Selle meetodiga saad luua uusi makselahendusi. Edastades makselahenduse andmed, saad vastu loodud makselahenduse kasutajatunnuse ning võtmed.</p>
 
-<h4>POST /api/project</h4>
+<h4>POST /project</h4>
 
 <h5>Sisendparameetrid</h5>
 
@@ -201,7 +201,7 @@
 
 <h5>Päring</h5>
 
-<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XPOST "https://<%= apiHost || hostname %>/api/project?access_token=<%= user && user.token || 12345%>" \
+<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XPOST "https://<%= apiHost || hostname %>/project?access_token=<%= user && user.token || 12345%>" \
     --data '{
         "type": "ipizza",
         "name": "Testkonto"
@@ -226,13 +226,13 @@
 
 <p>Selle meetodiga saab kustutada makselahenduse ning sellega seotud andmed.</p>
 
-<h4>DELETE /api/project/:project_id</h4>
+<h4>DELETE /project/:project_id</h4>
 
 <h4><strong>Demo</strong></h4>
 
 <h5>Päring</h5>
 
-<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XDELETE "https://<%= apiHost || hostname %>/api/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
+<pre>curl -H "X-Mashape-Authorization: YOUR-MASHAPE-KEY" -XDELETE "https://<%= apiHost || hostname %>/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
 
 <h5>Vastus</h5>
 
