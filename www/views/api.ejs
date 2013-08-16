@@ -79,7 +79,7 @@
 
 <h5>Päring</h5>
 
-<pre>curl -XGET "https://<%= hostname %>/api/project?access_token=<%= user && user.token || 12345%>"</pre>
+<pre>curl -XGET "https://<%= apiHost || hostname %>/api/project?access_token=<%= user && user.token || 12345%>"</pre>
 
 <h5>Vastus</h5>
 
@@ -134,7 +134,7 @@
 
 <h5>Päring</h5>
 
-<pre>curl -XGET "https://<%= hostname %>/api/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
+<pre>curl -XGET "https://<%= apiHost || hostname %>/api/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
 
 <h5>Vastus</h5>
 
@@ -195,7 +195,7 @@
 
 <h5>Päring</h5>
 
-<pre>curl -XPOST "https://<%= hostname %>/api/project?access_token=<%= user && user.token || 12345%>" \
+<pre>curl -XPOST "https://<%= apiHost || hostname %>/api/project?access_token=<%= user && user.token || 12345%>" \
     --data '{
         "type": "ipizza",
         "name": "Testkonto"
@@ -226,7 +226,7 @@
 
 <h5>Päring</h5>
 
-<pre>curl -XDELETE "https://<%= hostname %>/api/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
+<pre>curl -XDELETE "https://<%= apiHost || hostname %>/api/project/<%= list[0] && list[0]._id || "516e93fd9f89270f97000001" %>?access_token=<%= user && user.token || 12345%>"</pre>
 
 <h5>Vastus</h5>
 

@@ -97,6 +97,11 @@
     "demoPayment": "5170f8369f6fbc7034000001",
 
     "#": "Google Analytics ID",
-    "googleAnalyticsID": false
+    "googleAnalyticsID": false,
 
+    "#": "API hostname",
+    "apiHost": "pangalink.net",
+
+    "#": "If set, require req.headers.api_secret to be the following value for any API request",
+    "apiSecret": ""
 }
