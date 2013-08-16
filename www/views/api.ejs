@@ -4,11 +4,12 @@
 
 <div class="well well-small">
     <% if(user){%>
-        Sinu salajane API võti on <strong style="font-family: monospace"><%= user.token %></strong>
+        Sinu salajane API võti on <strong style="font-family: monospace"><%= user.token %></strong><br />
     <% } %>
     <% if(!user){%>
-        <a href="/login">Logi sisse</a>, et näha siin oma salajast API võtit
+        <a href="/login">Logi sisse</a>, et näha siin oma salajast API võtit<br />
     <% } %>
+    API aadress on <strong>https://<%= apiHost || hostname %>/api/</strong>
 </div>
 
 <p>Pangalink.net API koosneb kahest osast - esiteks lisaparameetritest, mida on võimalik kaasa anda maksevormiga ning teiseks HTTP JSON API, mis võimaldab automatiseerida makselahenduste loomisega seonduvat.</p>
