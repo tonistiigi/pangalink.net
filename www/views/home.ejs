@@ -3,16 +3,16 @@
     <h1><%= title %></h1>
 </div>
 
-<p class="lead"><%= title %> on pangalingi testimise teenus, mis võimaldab arendajal testida pangalingi toimivust ilma, et oleks vaja sõlmida pangaga mingeid lepinguid, vahetada sertifikaate vms.</p>
+<p class="lead"><%= title %> on pangalingi testimise teenus, mis võimaldab arendajal testida pangalingi toimivust, ilma et oleks vaja sõlmida pangaga lepinguid või vahetada sertifikaate.</p>
 
-<p>Nimelt <em><%= hostname %></em> genereerib arendajale vastavad sertifikaadid ning unikaalse kliendi tunnuskoodi testimiseks ise ning arendaja saab kasutada neid andmeid oma pangalingi rakenduses. Kui nüüd klikata arendaja rakenduses või veebipoes nupule "Maksa," ei suunata kasutajat mitte päris panka, vaid <em><%= hostname %></em> netipanga emulaatorile, kus on võimalik tehtud päringu kehtivust uurida ning lõpuks sooritada ka test maksekorraldus.</p>
+<p>Nimelt genereerib <em><%= title %></em> arendajale testimiseks vastavad sertifikaadid ja unikaalse kliendi tunnuskoodi. Arendaja saab kasutada neid andmeid oma pangalingi rakenduses. Kui nüüd klikata arendaja rakenduses või veebipoes nupule "Maksa," ei suunata kasutajat mitte päris panka, vaid <em><%= title %></em> netipanga emulaatorile, kus on võimalik uurida tehtud päringu kehtivust ning sooritada ka test-maksekorraldus.</p>
 
 <div class="bs-callout bs-callout-warning">
     <h4><%= title %> on esimene valik pangalinkide testimiseks</h4>
-    <p>Kas teadsid, et praeguseks kasutavad peaaegu kõik arendajad pangalinkide testimiseks just <em><%= hostname %></em> teenust? Unusta 1€ testmaksed läbi panga ning sellega seonduva raamatupidamisliku peavalu - <em><%= hostname %></em> automatiseerib kõik pangalinkidega seonduva täiesti tasuta. Päris raha testimiseks kasutada pole enam vaja.</p>
+    <p>Kas teadsid, et praeguseks kasutavad peaaegu kõik arendajad pangalinkide testimiseks just <em><%= title %></em> teenust? Unusta 1€ testmaksed läbi panga ja sellega seonduv raamatupidamislik peavalu - <em><%= title %></em> automatiseerib kõik pangalinkidega seonduva täiesti tasuta. Päris raha pole enam testimiseks vaja kasutada.</p>
 
 
-<h4>Toeta <%= title %> tasuta teenust</h4>
+<h4>Kui soovid tänada <%= title %> teenusepakkujat</h4>
 
 <p>Paypal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DB26KWR2BQX5W"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="Donate to author" style="max-width:100%;"></a></p>
 
@@ -24,12 +24,12 @@
 
 <p>Alustamiseks tuleks <a href="/join">luua endale konto</a> ning seejärel <a href="/add-project">lisada uus makselahendus</a>, millega saad enda rakenduse jaoks vajaliku kasutajatunnuse, salajase võtme ning panga sertifikaadi.</p>
 
-<p>Makselahenduste silumise eesmärgil on kõik sooritatud maksekorralduste andmed logitud. Salvestatakse kõik vormiväljad, HTTP päringute päised, automaatvastuste sisu jne. (salvestatud andmete näite <a href="/payment/<%= demoPayment %>">leiab siit</a>). Samuti annab <em><%= hostname %></em> teada erinevatest vigadest ja nende põhjustest. Logitud andmeid näeb ainult nende omanik, kõrvalised isikud sellele ligi ei pääse.</p>
+<p>Makselahenduste silumise eesmärgil on kõik sooritatud maksekorralduste andmed logitud. Salvestatakse kõik vormiväljad, HTTP päringute päised, automaatvastuste sisu jne. (salvestatud andmete näite <a href="/payment/<%= demoPayment %>">leiab siit</a>). Samuti annab <em><%= title %></em> teada erinevatest vigadest ja nende põhjustest. Logitud andmeid näeb ainult nende omanik, kõrvalised isikud sellele ligi ei pääse.</p>
 
 <h3>Kasutustingimused</h3>
-<p><em><%= hostname %></em> teenus on tasuta nii era-/õppe- kui ka kommertseesmärkideks. Teenuse kasutamine kurjade eesmärkide täitmiseks on rangelt keelatud. <em><%= hostname %></em> teenus on mõeldud kasutamiseks põhimõttel "nagu on" ning <em><%= hostname %></em> ei vastuta vähimalgi määral teenuse (ebasihipärasest) kasutamisest tekkinud kahjude eest. Reeglite rikkumisele järgneb genereeritud sertifikaadi enneaegne tühistamine.</p>
+<p><em><%= title %></em> teenus on tasuta nii era-/õppe- kui ka kommertseesmärkideks. Teenuse kasutamine kurjade eesmärkide täitmiseks on rangelt keelatud. <em><%= title %></em> teenus on mõeldud kasutamiseks põhimõttel "nagu on" ning <em><%= title %></em> ei vastuta vähimalgi määral teenuse (ebasihipärasest) kasutamisest tekkinud kahjude eest. Reeglite rikkumisele järgneb genereeritud sertifikaadi enneaegne tühistamine.</p>
 
 
 <h3>Veebimajutus</h3>
-<p><em><%= hostname %></em> teenust majutab <a href="https://www.zone.ee/">ZONE.EE</a></p>
+<p><em><%= title %></em> teenust majutab <a href="https://www.zone.ee/">ZONE.EE</a></p>
 <p><a href="https://www.zone.ee/et/"><img src="/images/zone.png" width="249" height="50"/></a></p>
