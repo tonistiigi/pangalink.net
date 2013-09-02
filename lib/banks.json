@@ -195,7 +195,8 @@
             "charEncoding": 16,
             "feedBackUrl": 128,
             "delivery": 1
-        }
+        },
+        "allowGet": true
     },
     "lhv": {
         "key": "lhv",
