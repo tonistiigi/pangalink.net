@@ -34,6 +34,22 @@
         </div>
     </div>
 
+    <div class="form-group <% if(validation.username){%>has-error<%}%>">
+        <label class="col-lg-2 control-label">Konto tüüp</label>
+        <div class="col-lg-6">
+            <span class="help-block">
+            <span class="label label-<%= accountInfo[user.account.type].label %>"><%= accountInfo[user.account.type].title %></span>
+            <%= accountInfo[user.account.type].description %></span>
+            <% if(user.account.expires){%>
+                <span class="help-block">Ettemaks kuni <strong><%= user.account.expires %></strong></span>
+            <% } %>
+            
+            <% if(user.account.type == "free"){%>
+                <span class="help-block"><strong><%= accountInfo.pro.title %></strong> hind on <strong><%= accountInfo.pro.price %></strong>. <%= accountInfo.pro.description %>. Konto tüübi muutmiseks saada kiri aadressile <a href="mailto:info+upgrade.<%= user._id %>@pangalink.net">info@pangalink.net</a></span>
+            <% } %>
+        </div>
+    </div>    
+
     <div class="bs-callout bs-callout-warning">
       <h4>Parooli vahetus</h4>
       <p>Jäta järgnevad väljad tühjaks, kui ei soovi parooli muuta</p>
