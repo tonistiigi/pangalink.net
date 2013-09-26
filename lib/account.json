@@ -7,8 +7,8 @@
     },
 
     "pro":{
-        "title": "PRO konto",
-        "description": "PRO konto on reklaamivaba ning sobib seega professionaalseks kasutuseks",
+        "title": "PRO-pakett",
+        "description": "PRO-pakett on reklaamivaba ning sobib professionaalseks kasutuseks",
         "label": "success",
         "price": "59 € aastas (ilma km.)"
     }
