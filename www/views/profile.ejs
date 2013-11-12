@@ -75,6 +75,26 @@
         </div>
     </div>
 
+    <div class="bs-callout bs-callout-warning">
+      <h4>Yubikey</h4>
+      <p>Soovi korral võid parooli asemel kasutada <a href="http://www.yubico.com/products/yubikey-hardware/yubikey/">Yubikey</a> võtit.</p>
+    </div>
+
+    <div class="form-group <% if(validation.yubi){%>has-error<%}%>">
+        <label class="col-lg-2 control-label" for="yubi">Yubikey identiteet või ühekordne parool</label>
+        <div class="col-lg-6">
+            <input class="form-control" type="text" name="yubi" id="yubi" value="<%= yubi %>"/>
+            <% if(validation.yubi){%>
+                <span class="help-block"><%= validation.yubi %></span>
+            <%}%>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-2"></div>
+        <label class="col-lg-6"><input type="checkbox" name="useyubi" id="useyubi" <%= useyubi ? 'checked="checked"' : '' %>/> Luba sisselogimisel ainult Yubikey kasutamine</label>
+    </div>
+
     <div class="form-group">
         <div class="col-lg-2"></div>
         <div class="col-lg-6"><button type="submit" class="btn">Uuenda profiili andmeid</button></div>

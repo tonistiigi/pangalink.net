@@ -103,5 +103,11 @@
     "apiHost": "pangalink.net",
 
     "#": "If set, require req.headers.api_secret to be the following value for any API request",
-    "apiSecret": ""
+    "apiSecret": "",
+
+    "#": "Yubikey API keys, generate here: https://upgrade.yubico.com/getapikey/",
+    "yubikey":{
+        "client_id": "12345",
+        "secret_key": "secret api key"
+    }
 }

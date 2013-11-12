@@ -27,6 +27,7 @@
     "iconv": "*",
     "mongodb": "*",
     "pem": "~0.2",
-    "zipstream": "*"
+    "zipstream": "*",
+    "yub": "*"
   }
 }
