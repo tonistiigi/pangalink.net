@@ -57,10 +57,11 @@
     <div class="form-group<% if(validation.yubi){%> has-error<%}%>">
         <label class="col-lg-2 control-label" for="yubi">Yubikey ühekordne võti</label>
         <div class="col-lg-6">
-            <input class="form-control" type="text" name="yubi" id="yubi" value="<%= yubi %>" placeholder="vvvfsdggdhsh..." required/>
+            <input class="form-control" type="text" name="yubi" id="yubi" value="<%= yubi %>" placeholder="vvvfsdggdhsh..."/>
             <% if(validation.yubi){%>
                 <span class="help-block"><%= validation.yubi %></span>
             <%}%>
+            <span class="help-block"><a href="http://www.yubico.com/">Yubikey</a> kasutamine on vabatahtlik ning mõeldud konto turvalisuse tõstmiseks</span>
         </div>
     </div>
 
