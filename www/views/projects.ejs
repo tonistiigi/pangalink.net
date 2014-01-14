@@ -6,16 +6,6 @@
     <h1>Minu makselahendused</h1>
 </div>
 
-<div class="bs-callout bs-callout-warning">
-      <h4><span class="label label-<%= accountInfo[user.account.type].label %>"><%= accountInfo[user.account.type].title %></span></h4>
-      <% if(user.account.type == "free"){%>
-Kasutajale kuvatakse reklaame. <a href="/profile">Muuda konto andmeid</a>
-<% } %>
-<% if(user.account.type == "pro"){%>
-Kasutajale reklaame ei kuvata
-<% } %>
-    </div>
-
 <table class="table table-hover">
     <thead>
         <tr>
