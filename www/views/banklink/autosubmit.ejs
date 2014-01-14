@@ -14,6 +14,8 @@
 
         <p>Makse automaatselt <%= {"PAYED": "teostatud", "CANCELLED": "katkestatud", "REJECTED": "tagasi lükatud"}[payment.state] %>, suunatakse tagasi kaupmehe juurde...</p>
 
+        <div data-payment-state="<%= payment.state %>"></div>
+
 <% if(method == "POST"){%>
 
     <form id="submit-form" method="POST" action="<%= target %>">
@@ -22,14 +24,14 @@
             <input type="hidden" name="<%= key %>" value="<%= payment.responseFields[key] %>" />
         <% }) %>
 
-        <p>Juhul, kui automaatne ümbersuunamine ei toiminud, <input type="submit" value="kliki siia"></p>
+        <p>Juhul, kui automaatne ümbersuunamine ei toiminud, <input type="submit" data-button="return" value="kliki siia"></p>
 
     </form>
 
 <%}%>
 
 <% if(method == "GET"){%>
-    <p>Juhul, kui automaatne ümbersuunamine ei toiminud, <a href="<%= target %>">kliki siia</a></p>
+    <p>Juhul, kui automaatne ümbersuunamine ei toiminud, <a data-button="return" href="<%= target %>">kliki siia</a></p>
 <%}%>
 
 <p>&copy; 2011 - <%= new Date().getFullYear() %> <a href="http://www.kreata.ee/">Kreata OÜ</a> <a href="mailto:info@pangalink.net">info@pangalink.net</a></p>

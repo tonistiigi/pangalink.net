@@ -1,9 +1,16 @@
 <% include header %>
 
-
 <h2><%= payment.state == "PAYED" ? "Makse teostatud" : (payment.state == "REJECTED" ? "Makse tagasi lükatud" : "Makse katkestatud") %></h2>
 
+<span data-payment-state="<%= payment.state %>"></span>
+
 <p>Kliki nupul, et lõpetada maksekorraldus ja pöörduda koos makse tulemusega tagasi kaupmehe saidile.</p>
+
+<% if(payment.responseFields){ %>
+<% Object.keys(payment.responseFields).forEach(function(key){%>
+    <span data-out-key="<%= key %>" data-out-value="<%= payment.responseFields[key] %>"></span>
+<%})%>
+<%}%>
 
 <% if(method == "POST"){%>
 
@@ -13,7 +20,7 @@
             <input type="hidden" name="<%= key %>" value="<%= payment.responseFields[key] %>" />
         <% }) %>
 
-        <button type="submit" class="btn btn-info">Tagasi kaupmehe juurde</button>
+        <button data-button="return" type="submit" class="btn btn-info">Tagasi kaupmehe juurde</button>
 
     </form>
 
@@ -27,7 +34,7 @@
 
 <% if(method == "GET"){%>
     <p>
-        <a href="<%= target %>" class="btn btn-primary">Tagasi kaupmehe juurde</a>
+        <a data-button="return" href="<%= target %>" class="btn btn-primary">Tagasi kaupmehe juurde</a>
     </p>
 <%}%>
 

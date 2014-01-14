@@ -28,6 +28,8 @@
     "mongodb": "*",
     "pem": "~0.2",
     "zipstream": "*",
-    "yub": "*"
+    "yub": "*",
+    "marked": "~0.3.0",
+    "highlight.js": "~7.5.0"
   }
 }

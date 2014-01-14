@@ -2,6 +2,14 @@
 
 <h2>Maksekorralduse teostamine</h2>
 
+<span data-payment-state="PREVIEW"></span>
+
+<% if(payment.fields){ %>
+<% payment.fields.forEach(function(field){%>
+    <span data-in-key="<%= field.key %>" data-in-value="<%= field.value %>"></span>
+<%})%>
+<%}%>
+
 <% if(payment.warnings && payment.warnings.length){%>
 
     <div class="alert">
@@ -26,7 +34,7 @@
                     <label for="payment_name">Makse sooritaja nimi</label>
                 </td>
                 <td>
-                    <input type="text" id="payment_snd_name" name="senderName" placeholder="Tõõger Leõpäöld" value="<%= payment.senderName || "Tõõger Leõpäöld" %>" class="form-control"/>
+                    <input type="text" data-input="sender-name" id="payment_snd_name" name="senderName" placeholder="Tõõger Leõpäöld" value="<%= payment.senderName || "Tõõger Leõpäöld" %>" class="form-control"/>
                 </td>
             </tr>
         <% } %>
@@ -48,7 +56,7 @@
                     <label for="payment_snd_account">Makse sooritaja konto</label>
                 </td>
                 <td>
-                    <input type="text" id="payment_snd_account" name="senderAccount" placeholder="<%= payment.senderAccount %>" value="<%= payment.senderAccount %>" class="form-control"/>
+                    <input type="text" data-input="sender-account" id="payment_snd_account" name="senderAccount" placeholder="<%= payment.senderAccount %>" value="<%= payment.senderAccount %>" class="form-control"/>
                 </td>
             </tr>
         <% } %>
@@ -121,12 +129,12 @@
 
     <hr />
 
-    <button type="submit" name="pay" value="pay" class="btn btn-info">Soorita makse</button>
+    <button type="submit" data-button="accept" name="pay" value="pay" class="btn btn-info">Soorita makse</button>
 
-    <button type="submit" name="cancel" value="cancel" class="btn btn-warning">Katkesta makse</button>
+    <button type="submit" data-button="cancel" name="cancel" value="cancel" class="btn btn-warning">Katkesta makse</button>
 
     <% if(bank.rejectAddress){%>
-        <button type="submit" name="reject" value="reject" class="btn btn-inverse">Tühista tehnilistel põhjustel</button>
+        <button type="submit" data-button="reject" name="reject" value="reject" class="btn btn-inverse">Tühista tehnilistel põhjustel</button>
     <% } %>
 
     </form>
