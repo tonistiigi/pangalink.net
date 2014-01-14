@@ -269,5 +269,36 @@
         "id": "HP",
         "accountNrPrefix": 22,
         "accountNrLength": 12
+    },
+    "tapiola": {
+        "key": "tapiola",
+        "type": "aab",
+        "name": "Tapiola Emulaator",
+        "charset": false,
+        "defaultCharset": "ISO-8859-1",
+        "returnAddress": "RETURN",
+        "cancelAddress": "CANCEL",
+        "rejectAddress": "REJECT",
+        "id": "TAPIOLA",
+        "accountNrPrefix": 363,
+        "accountNrLength": 14,
+        "fieldLength": {
+            "VERSION": 4,
+            "STAMP": 15,
+            "RCV_ID": 15,
+            "RCV_ACCOUNT": 15,
+            "RCV_NAME": 15,
+            "LANGUAGE": 1,
+            "AMOUNT": 19,
+            "REF": 20,
+            "DATE": 10,
+            "MSG": 245,
+            "RETURN": 199,
+            "CANCEL": 199,
+            "REJECT": 199,
+            "CONFIRM": 3,
+            "KEYVERS": 4,
+            "CUR": 3
+        }
     }
 }
