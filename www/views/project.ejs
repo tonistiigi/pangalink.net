@@ -115,7 +115,7 @@
 
         <% } %>
 
-        <% if(banks[project.bank].type == "solo"){ %>
+        <% if(["solo", "aab", "samlink"].indexOf(banks[project.bank].type) >= 0){ %>
             <tr>
                 <th>
                     Salajane MAC võti

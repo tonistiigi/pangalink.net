@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="<%- payment.charset.toLowerCase() %>" />
+        <title>Example payment usage - <%= bank.name %> - pangalink.net</title>
+    </head>
+    <body>
 <?php
 
 // THIS IS AUTO GENERATED SCRIPT
@@ -18,7 +25,7 @@ var data = "";
 $fields = array(
 <% payment.fields.forEach(function(field, i){ -%>
 <% fields[field.key] = field.value -%>
-<% if(field.key != "SOLOPMT_MAC" && field.key != "MAC"){ -%>
+<% if(field.key != "NET_MAC"){ -%>
         "<%- field.key %>" <%- field.key.length < 15 && new Array(15 - field.key.length).join(" ") || "" %>=> "<%- field.value.replace(/\\/g, "\\\\").replace(/"/g, "\\\"").replace(/\r/g, "\\r").replace(/\n/g, "\\n") %>"<%- i < payment.fields.length - 1  && "," || "" %>
 <% } -%>
 <% }) -%>
@@ -27,13 +34,13 @@ $fields = array(
 // STEP 3. Generate data to be signed
 // ==================================
 <%
-    signatureOrder = signatureOrder[fields.SOLOPMT_VERSION || fields.VERSION || "0002"] || signatureOrder["0002"];
+    signatureOrder = signatureOrder[fields.NET_VERSION || fields.VERSION || "0002"] || signatureOrder["0002"];
     signatureOrder = signatureOrder["PAYMENT-IN"];
 -%>
 
 <% signatureOrder.forEach(function(field, i, arr){ -%>
-<% data += (fields[field] || fields["SOLOPMT_" + field] || "") + "&" -%>
-<%- !i ? "$data = " : "        "%>$fields["<%- "SOLOPMT_" + field in fields ? "SOLOPMT_" + field : field %>"] . "&" .
+<% data += (fields[field] || fields["NET_" + field] || "") + "&" -%>
+<%- !i ? "$data = " : "        "%>$fields["<%- field %>"] . "&" .
 <% })
 data += project.secret + "&"
 -%>
@@ -44,29 +51,21 @@ data += project.secret + "&"
 // STEP 4. Sign the data with <%= project.soloAlgo.toUpperCase() %> to generate MAC code
 // ========================================================
 
-$fields["<%= "SOLOPMT_VERSION" in fields ? "SOLOPMT_" : "" %>MAC"] = strtoupper(<%= project.soloAlgo %>($data));
+$fields["NET_MAC"] = strtoupper(<%= project.soloAlgo %>($data));
 
 // STEP 5. Generate POST form with payment data that will be sent to the bank
 // ==========================================================================
+?>
+        <form method="post" action="https://pangalink.net/banklink/<%- bank.key %>">
 
-// Auto accept payment
-// possible values: accept, cancel, reject
-$fields["PANGALINK_AUTOPAY"] = "accept";
+            <!-- include all values as hidden form fields -->
+<?php foreach($fields as $key => $val):?>
+            <input type="hidden" name="<?php echo $key; ?>" value="<?php echo htmlspecialchars($val); ?>" />
+<?php endforeach; ?>
 
-// Generate POST body from $fields
-$post = array();
-foreach($fields as $key=>$value){
-    $post[] = "$key=" . urlencode($value);
-}
+            <!-- when the user clicks "Pay" form data is sent to the bank -->
+            <input type="submit" value="Pay" />
 
-$ch = curl_init("https://pangalink.net/banklink/<%- bank.key %>");
-curl_setopt($ch,CURLOPT_POST, 1);
-curl_setopt($ch,CURLOPT_POSTFIELDS, join("&", $post));
-curl_setopt($ch,CURLOPT_FOLLOWLOCATION, 1);
-
-//execute post
-echo curl_exec($ch);
-
-//close connection
-curl_close($ch);
-
+        </form>
+    </body>
+</html>

@@ -108,12 +108,7 @@
 
     </div>
 
-<pre>
-    <%= bank %>
-    <%= JSON.stringify(banks, false, 4) %>
-</pre>
-
-    <div id="ipizzaform" style="<%= bank != "ec" && bank != "nordea" ? "display: block;" : "display:none;" %>">
+    <div id="ipizzaform" style="<%= ["ec", "nordea", "tapiola", "alandsbanken", "handelsbanken", "aktiasppop"].indexOf(bank) < 0 ? "display: block;" : "display:none;" %>">
 
         <h3>Ipizza seaded</h3>
 
@@ -152,7 +147,7 @@
                 soloform = document.getElementById("soloform"),
                 ecform = document.getElementById("ecform");
 
-            if(bank.value != "ec" && bank.value != "nordea"){
+            if(["ec", "nordea", "tapiola", "alandsbanken", "handelsbanken", "aktiasppop"].indexOf(bank.value) < 0){
                 soloform.style.display = "none";
                 ecform.style.display = "none";
                 ipizzaform.style.display = "block";
