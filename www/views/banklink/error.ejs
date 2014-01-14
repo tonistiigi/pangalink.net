@@ -2,6 +2,9 @@
 
 <h2>Viga makse töötlemisel</h2>
 
+<span data-payment-state="ERRORED"></span>
+<span data-payment-error="<%= errors.map(function(error){return typeof error != "object" ? error : error.error}).join("; ") %>" ></span>
+
 <% if(errors){%>
 
     <div class="alert alert-danger">
