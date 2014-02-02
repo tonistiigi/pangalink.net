@@ -8,7 +8,7 @@ Makse staatuse leiab järgmisest väljast:
 
     document.querySelector("[data-payment-state]").dataset.paymentState
 
-Võimalikud väärtused
+Võimalikud väärtused:
 
   * **PREVIEW** – ees on maksekorralduse eelvaade
   * **PAYED** – maksekorraldus on aktsepteeritud ("tagasi kaupmehe juurde" leht)
@@ -39,7 +39,7 @@ NB! Kuna HTML elemendid võivad olla erinevad (nii &lt;A&gt; kui ka &lt;button&g
 
 ### Makse väljad
 
-Osadel juhtudel on võimalik muuta makse sooritaja nime ja kontonumbrit, need väljad leiab `data-input` atribuudi abil
+Osadel juhtudel on võimalik muuta makse sooritaja nime ja kontonumbrit, need väljad leiab `data-input` atribuudi abil:
 
   * **sender-name** maksja nimi (makse eelvaate lehel)
   * **sender-account** maksja konto number (makse eelvaate lehel)
