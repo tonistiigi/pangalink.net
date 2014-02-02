@@ -1,6 +1,6 @@
 ## UI automaattestid
 
-Pangalink.net on UI automaattestide sõbralik, kõik olulisemad väärtused on kirjeldatud `data-*` atribuutidega. UI automaatteste on võimalik läbi viia näiteks [Seleniumi](http://docs.seleniumhq.org/) abil.
+Pangalink.net on automaattestisõbralik, kõik olulisemad väärtused on kirjeldatud `data-*` atribuutidega. UI automaatteste on võimalik läbi viia näiteks [Seleniumi](http://docs.seleniumhq.org/) abil.
 
 ### Makse staatus
 
@@ -10,11 +10,11 @@ Makse staatuse leiab järgmisest väljast:
 
 Võimalikud väärtused
 
-  * **PREVIEW** - ees on maksekorralduse eelvaade
-  * **PAYED** - maksekorraldus on aktsepteeritud ("tagasi kaupmehe juurde" leht)
-  * **REJECTED** - maksekorraldus on tehnilistel põhjustel tagasi lükatud ("tagasi kaupmehe juurde" leht)
-  * **CANCELLED** - maksekorraldus on kasutaja poolt katkestatud ("tagasi kaupmehe juurde" leht)
-  * **ERRORED** - makse andmeid ei aktsepteeritud, vt. ka `data-payment-error` välja
+  * **PREVIEW** – ees on maksekorralduse eelvaade
+  * **PAYED** – maksekorraldus on aktsepteeritud ("tagasi kaupmehe juurde" leht)
+  * **REJECTED** – maksekorraldus on tehnilistel põhjustel tagasi lükatud ("tagasi kaupmehe juurde" leht)
+  * **CANCELLED** – maksekorraldus on kasutaja poolt katkestatud ("tagasi kaupmehe juurde" leht)
+  * **ERRORED** – makse andmeid ei aktsepteeritud, vt. ka `data-payment-error` välja
 
 Juhul kui makse andmeid ei aktsepteeritud, leiab veateate kirjelduse teksti kujul järgmisest väljast:
 
@@ -28,10 +28,10 @@ Näiteks juhul kui makse on õnnestunud, peaks "tagasi kaupmehe juurde" lehel le
 
 Kõik nupud on märgistatud atribudiga `data-button`, mille väärtused on järgnevad
 
-  * **accept** - makse kinnitamise nupp (makse eelvaate lehel)
-  * **cancel** - makse katkestamise nupp (makse eelvaate lehel)
-  * **reject** - makse tagasilükkamise nupp (makse eelvaate lehel)
-  * **return** - makse tagasilükkamise nupp ("tagasi kaupmehe juurde" leht)
+  * **accept** – makse kinnitamise nupp (makse eelvaate lehel)
+  * **cancel** – makse katkestamise nupp (makse eelvaate lehel)
+  * **reject** – makse tagasilükkamise nupp (makse eelvaate lehel)
+  * **return** – makse tagasilükkamise nupp ("tagasi kaupmehe juurde" leht)
 
 NB! Kuna HTML elemendid võivad olla erinevad (nii &lt;A&gt; kui ka &lt;button&gt;), siis selektoris ei tohiks elemendi tüüpi määrata ja kasutada vaid `data-button` atribuuti. Näiteks makse aktsepteerimiseks võib teha nii:
 
