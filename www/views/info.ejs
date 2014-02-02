@@ -27,7 +27,7 @@
 
 <h3 id="vigadest_teatamine">Vigadest teatamine</h3>
 
-<p>Juhul kui leiad <a href="/"><%= hostname %></a> teenusest mõne vea, olgu selleks siis ebakorrektne pangalingi implementatsioon või kirjaviga mõnes tekstis, siis saad sellest veast teavitada <a href="https://github.com/andris9/pangalink.net/issues?state=open">GitHubis.</a></p>
+<p>Juhul kui leiad <%= title %> teenusest mõne vea, olgu selleks siis ebakorrektne pangalingi implementatsioon või kirjaviga mõnes tekstis, siis saad sellest veast teavitada <a href="https://github.com/andris9/pangalink.net/issues?state=open">GitHubis.</a></p>
 
 <p><%= title %> on vaba lähtekoodiga tarkvara, <%= title %> lähtekood on alla laetav <a href="https://github.com/andris9/pangalink.net">GitHubist</a>, seega võid ka ise vea parandamises kaasa lüüa.</p>
 
@@ -38,14 +38,14 @@
 <h4 id="demorakendus">Demorakendus</h4>
 
 <p>Lae endale demorakenduse täielik lähtekood (põhineb Zone <a href="http://blog.zone.ee/2006/12/12/pangalink/">pangalingi demol</a>) koos vajalike sertifikaatidega allolevalt lingilt.</p>
-<p>Demorakendust pole vaja eraldi konfigureerida – töötab <em>out of the box</em>. Lae see enda serverisse ning ava aadress <a href="http://tahvel.info/banklink-0.1.1/pay.php">pay.php</a></p>
+<p>Demorakendust pole vaja eraldi konfigureerida – töötab <em>out of the box</em>. Lae see enda serverisse ning ava aadress <a href="http://tahvel.info/banklink-0.1.1/pay.php">pay.php</a>.</p>
 <p><a href="/assets/banklink-0.1.1.zip" class="btn btn-default btn-lg" target="_blank"><span class="glyphicon glyphicon-download"></span> Demorakenduse lähtekood</a></p>
 
 <hr>
 
 <h4 id="csr_genereerimine">CSR genereerimine</h4>
 
-<p>Juhul kui soovid abi salajase võtme ja sertifikaadipäringu failide genereerimisel, saad need failid teha <a href="/keys">siinsamas</a>.
+<p>Juhul kui soovid abi salajase võtme ja sertifikaadipäringu failide genereerimisel, saad seda teha <a href="/keys">siinsamas</a>.
 
 <hr>
 
@@ -60,13 +60,13 @@
     <li><a href="https://www.swedbank.ee/static/pdf/business/d2d/paymentcollection/info_banklink_techspec_est.pdf" target="_blank">Swedbank pangalingi dokumentatsioon</a> (PDF)</li>
 </ul>
 
-<p><a href="/"><%= hostname %></a> on kohati rangem kui spetsifikatsioonid ette näevad - juhul kui mingi väärtus on mitmeti mõistetav või võiks alati olla kindla väärtusega, siis <a href="/"><%= hostname %></a> nõuabki selle puhul ühte ja kindlat kasutusviisi.</p>
-<p>Näiteks kui osad pangad lubavad kasutada sisendina suvalist kodeeringut (n: SEB puhul <code>VK_CHARSET=ISO-8859-13</code>), aga reaalsuses võtavad seda kui <code>ISO-8859-1</code>, lõigates tundmatud sümbolid lihtsalt ära, siis <a href="/"><%= hostname %></a> ei luba mittetoetatud kodeeringuid üldse kasutada.</p>
-<p>Samuti kui SOLO protokollis on <code>SOLOPMT_CONFIRM</code> parameetri kasutamine valikuline ning selle kasutamise korral saavad väärtusteks olla <code>YES|NO</code>, siis <a href="/"><%= hostname %></a> nõuab et parameeter oleks alati määratud ja selleks väärtuseks oleks <code>YES</code> kuna vastasel korral ei ole võimalik kontrollida vastuspäringu autentsust.</p>
+<p><%= title %> on kohati rangem kui spetsifikatsioonid ette näevad - juhul kui mingi väärtus on mitmeti mõistetav või võiks alati olla kindla väärtusega, siis <%= title %> nõuabki selle puhul ühte ja kindlat kasutusviisi.</p>
+<p>Näiteks kui osad pangad lubavad kasutada sisendina suvalist kodeeringut (n: SEB puhul <code>VK_CHARSET=ISO-8859-13</code>), aga reaalsuses võtavad seda kui <code>ISO-8859-1</code>, lõigates tundmatud sümbolid lihtsalt ära, siis <%= title %> ei luba mittetoetatud kodeeringuid üldse kasutada.</p>
+<p>Samuti kui SOLO protokollis on <code>SOLOPMT_CONFIRM</code> parameetri kasutamine valikuline ning selle kasutamise korral saavad väärtusteks olla <code>YES|NO</code>, siis <%= title %> nõuab et parameeter oleks alati määratud ja selleks väärtuseks oleks <code>YES</code> kuna vastasel korral ei ole võimalik kontrollida vastuspäringu autentsust.</p>
 
 <hr>
 
-<h4 id="pangalink_soovitab"><a href="/"><%= hostname %></a> soovitab</h4>
+<h4 id="pangalink_soovitab"><%= title %> soovitab</h4>
 <ul>
     <li><a href="http://www.e-abi.ee">E-Abi</a> - pangalinkide moodulid populaarseimatele sisuhaldustarkvaradele</li>
     <li><a href="http://www.magentocommerce.com/magento-connect/eepohs-estpay-7729.html">Eepohs EstPay Estonian Payment Methods</a> - pangalinkide tasuta moodulid Magento platvormile</li>
