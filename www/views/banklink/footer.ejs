@@ -1,6 +1,6 @@
             </div>
 
-            <% if(!user || user.account.type == "free"){%>
+            <% if(!user || !user.account || user.account.type == "free"){%>
             <div style="width: 728px; margin:0 auto">
                 <script type="text/javascript"><!--
                 google_ad_client = "pub-7677294784429110";
