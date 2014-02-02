@@ -58,6 +58,6 @@ Näiteks `VK_MSG` väärtuse sisendamete hulgast leiab makse eelvaate lehel jär
 
     document.querySelector("[data-in-key=VK_MSG]").dataset.inValue
 
-Sarnaselt leiab "tagasi kaupmehe juurde" lehelt väljuvate andmete väärtusi
+Sarnaselt leiab "tagasi kaupmehe juurde" lehelt väljuvate andmete väärtusi:
 
     document.querySelector("[data-out-key=VK_MSG]").dataset.outValue
