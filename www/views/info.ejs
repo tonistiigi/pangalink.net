@@ -60,9 +60,11 @@
     <li><a href="https://www.swedbank.ee/static/pdf/business/d2d/paymentcollection/info_banklink_techspec_est.pdf" target="_blank">Swedbank pangalingi dokumentatsioon</a> (PDF)</li>
 </ul>
 
-<p><%= title %> on kohati rangem kui spetsifikatsioonid ette näevad – juhul kui mingi väärtus on mitmeti mõistetav või võiks alati olla kindla väärtusega, siis <%= title %> nõuabki selle puhul ühte ja kindlat kasutusviisi.</p>
+<p><%= title %> on kohati rangem kui spetsifikatsioonid ette näevad – juhul kui mingi väärtus on mitmeti mõistetav või võiks alati olla kindla väärtusega, siis <%= title %> nõuabki sel puhul üht ja kindlat kasutusviisi.</p>
+
 <p>Näiteks kui osad pangad lubavad kasutada sisendina suvalist kodeeringut (n: SEB puhul <code>VK_CHARSET=ISO-8859-13</code>), aga reaalsuses võtavad seda kui <code>ISO-8859-1</code>, lõigates tundmatud sümbolid lihtsalt ära, siis <%= title %> ei luba mittetoetatud kodeeringuid üldse kasutada.</p>
-<p>Samuti kui SOLO protokollis on <code>SOLOPMT_CONFIRM</code> parameetri kasutamine valikuline ning selle kasutamise korral saavad väärtusteks olla <code>YES|NO</code>, siis <%= title %> nõuab et parameeter oleks alati määratud ja selleks väärtuseks oleks <code>YES</code> kuna vastasel korral ei ole võimalik kontrollida vastuspäringu autentsust.</p>
+
+<p>Samuti kui SOLO protokollis on <code>SOLOPMT_CONFIRM</code> parameetri kasutamine valikuline ning selle kasutamise korral saavad väärtusteks olla <code>YES|NO</code>, siis <%= title %> nõuab, et parameeter oleks alati määratud ja selleks väärtuseks oleks <code>YES</code>, kuna vastasel korral ei ole võimalik kontrollida vastuspäringu autentsust.</p>
 
 <hr>
 
@@ -70,7 +72,7 @@
 <ul>
     <li><a href="http://www.e-abi.ee">E-Abi</a> – pangalinkide moodulid populaarseimatele sisuhaldustarkvaradele</li>
     <li><a href="http://www.magentocommerce.com/magento-connect/eepohs-estpay-7729.html">Eepohs EstPay Estonian Payment Methods</a> – pangalinkide tasuta moodulid Magento platvormile</li>
-    <li><a href="http://banklink.inoryy.com/">Banklink</a> – vabavaralised pangalinkide moodulid kasutamiseks PHP rakendustes</li>
+    <li><a href="http://banklink.inoryy.com/">Banklink</a> – vabavaralised pangalinkide moodulid PHP rakendustes kasutamiseks</li>
     <li><a href="http://drupal.org/project/commerce_ep">Commerce Estonian payments</a> – vabavaralised pangalinkide moodulid Drupal platvormile</li>
     <li><a href="https://github.com/tonistiigi/ipizza">ipizza</a> – Node.js kliendimoodulid pangalinkide kasutamiseks</li>
     <li><a href="https://github.com/jhaesus/bank_link">bank_link</a> – Ruby gem pangalinkide kasutamiseks</li>
@@ -198,17 +200,17 @@
 
 <blockquote>
 
-* Kas unikood kodeeringu puhul tuleb stringi pikkuse arvutamisel arvestada sübolite või baitide arvuga. Mitte-unikood kodeeringu puhul on sümbolite ja baitide arv alati võrdne.<br />
+* Väärtused näitavad, kas unikood kodeeringu puhul tuleb stringi pikkuse arvutamisel arvestada sübolite või baitide arvuga. Mitte-unikood kodeeringu puhul on sümbolite ja baitide arv alati võrdne.<br />
 
-** Juhul kui kodeering pole määratud parameetriga <code>VK_CHARSET</code> kasutatakse ISO-8859-13 kodeeringut, kuid allkirjastamisel täpitähti ei arvestata. Pangalink.net nõuab seetõttu Krediidipanga puhul alati <code>VK_CHARSET</code> parameetri kasutamist.<br />
+** Juhul kui kodeering pole määratud parameetriga <code>VK_CHARSET</code>, kasutatakse ISO-8859-13 kodeeringut, kuid allkirjastamisel täpitähti ei arvestata. Pangalink.net nõuab seetõttu Krediidipanga puhul alati <code>VK_CHARSET</code> parameetri kasutamist.<br />
 
-*** Ainult versioonis <code>004</code><br />
+*** Ainult versioonis <code>004</code>.<br />
 
-**** Estcard versioon <code>002</code> on aegunud, kasutada tuleks versiooni <code>004</code><br />
+**** Estcard versioon <code>002</code> on aegunud, kasutada tuleks versiooni <code>004</code>.<br />
 
-***** Swedbank tundub toetavat ka <code>ISO-8859-4</code> kodeeringut, kuigi dokumentatsioon seda ei luba
+***** Swedbank tundub toetavat ka <code>ISO-8859-4</code> kodeeringut, kuigi dokumentatsioon seda ei luba.
+
 </blockquote>
-
 
 <hr>
 

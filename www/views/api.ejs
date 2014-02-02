@@ -11,12 +11,12 @@
         Sinu salajane API võti on <strong style="font-family: monospace"><%= user.token %></strong><br />
     <% } %>
     <% if(!user){%>
-        <a href="/login">Logi sisse</a>, et näha siin oma salajast API võtit<br />
+        <a href="/login">Logi sisse</a>, et näha siin oma salajast API võtit.<br />
     <% } %>
     API aadress on <strong>https://<%= apiHost || hostname %>/</strong>
 </div>
 
-<p>Pangalink.net API koosneb kahest osast - esiteks lisaparameetritest, mida on võimalik kaasa anda maksevormiga ning teiseks HTTP JSON API, mis võimaldab automatiseerida makselahenduste loomisega seonduvat.</p>
+<p>Pangalink.net API koosneb kahest osast – esiteks lisaparameetritest, mida on võimalik kaasa anda maksevormiga ning teiseks HTTP JSON API, mis võimaldab automatiseerida makselahenduste loomisega seonduvat.</p>
 
 <div class="bs-callout bs-callout-warning">
   <h4>API kasutamine</h4>
@@ -29,13 +29,13 @@
 <p>Järgmised POST parameetrid saab kaasa panna tavalise maksevormiga. Näiteks kui tahad ette määrata maksja nime, siis võid tavalistele <code>VK_*</code> parameetritele panna maksevormi juurde ka parameetri <code>PANGALINK_NAME</code>, mis määrabki maksevormis maksja nime.</p>
 
 <ul>
-    <li><code>PANGALINK_NAME</code> - määrab ära maksja nime maksevormis (vaikimisi "Tõõger Leõpäöld")</li>
-    <li><code>PANGALINK_ACCOUNT</code> - määrab ära maksja konto maksevormis (vaikimisi seotud panga tüübiga)</li>
-    <li><code>PANGALINK_AUTOPAY</code> - automaatselt aktsepteerib/keeldub maksest ja suunab tagasi kaupmehe lehele. Võimalikud väärtused on:
+    <li><code>PANGALINK_NAME</code> – määrab ära maksja nime maksevormis (vaikimisi "Tõõger Leõpäöld")</li>
+    <li><code>PANGALINK_ACCOUNT</code> – määrab ära maksja konto maksevormis (vaikimisi seotud panga tüübiga)</li>
+    <li><code>PANGALINK_AUTOPAY</code> – automaatselt aktsepteerib/keeldub maksest ja suunab tagasi kaupmehe lehele. Võimalikud väärtused on:
         <ul>
-            <li><code>accept</code> - makse teostatakse</li>
-            <li><code>cancel</code> - makse katkestatakse</li>
-            <li><code>reject</code> - makse lükatakse tagasi tehnilistel põhjustel</li>
+            <li><code>accept</code> – makse teostatakse</li>
+            <li><code>cancel</code> – makse katkestatakse</li>
+            <li><code>reject</code> – makse lükatakse tagasi tehnilistel põhjustel</li>
         </ul>
     </li>
 </ul>
@@ -67,20 +67,20 @@
 <h5>GET parameetrid</h5>
 
 <ul>
-    <li><code>start_index</code> - millisest kirjest alustada kuvamist (korraga näidatakse kuni 20 kirjet)
+    <li><code>start_index</code> – millisest kirjest alustada kuvamist (korraga näidatakse kuni 20 kirjet)
 </ul>
 
 <h5>Vastusparameetrid</h5>
 
 <ul>
-    <li><code>total</code> - Mitu kirjet on üldse kokku</li>
-    <li><code>start_index</code> - Millisest kirjest alates hetkel nimekirja kuvatakse</li>
-    <li><code>end_index</code> - Milline kirje on kuvatavas nimekirjas viimane</li>
-    <li><code>list</code> - Kirjete nimekiri
+    <li><code>total</code> – Mitu kirjet on üldse kokku</li>
+    <li><code>start_index</code> – Millisest kirjest alates hetkel nimekirja kuvatakse</li>
+    <li><code>end_index</code> – Milline kirje on kuvatavas nimekirjas viimane</li>
+    <li><code>list</code> – Kirjete nimekiri
         <ul>
-            <li><code>id</code> - makselahenduse identifikaator</li>
-            <li><code>type</code> - panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
-            <li><code>name</code> - Makselahenduse nimi</li>
+            <li><code>id</code> – makselahenduse identifikaator</li>
+            <li><code>type</code> – panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
+            <li><code>name</code> – Makselahenduse nimi</li>
         </ul>
     </li>
     
@@ -124,21 +124,21 @@
 <h5>Vastusparameetrid</h5>
 
 <ul>
-    <li><code>id</code> - makselahenduse identifikaator</li>
-    <li><code>client_id</code> - kliendi tunnuskood pangale edastamiseks</li>
-    <li><code>payment_url</code> - maksevormi aadress</li>
-    <li><code>type</code> - panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
-    <li><code>name</code> - Makselahenduse nimi</li>
-    <li><code>description</code> - Makselahenduse kirjeldus (kui on määratud)</li>
-    <li><code>account_owner</code> - Konto omaniku nimi (kui on määratud)</li>
-    <li><code>account_nr</code> - Konto number (kui on määratud)</li>
-    <li><code>key_size</code> - Privaatvõtme suurus (kui on määratud)</li>
-    <li><code>return_url</code> - Tagasisuunamise aadress peale makse sooritamist (kui on määratud)</li>
-    <li><code>private_key</code> - salajane võti panka mineva makse andmete allkirjastamiseks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
-    <li><code>bank_certificate</code> - panga sertifikaat pangast saabunud maksekinnituse kontrolliks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
-    <li><code>mac_key</code> - Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks (ainult Nordea puhul)</li>
-    <li><code>algo</code> - Allkirjastamise algoritm (ainult Nordea puhul)</li>
-    <li><code>auto_response</code> - Juhul kui on tõene, siis pank teeb automaatpäringu makse infoga (ainult Nordea puhul)</li>
+    <li><code>id</code> – makselahenduse identifikaator</li>
+    <li><code>client_id</code> – kliendi tunnuskood pangale edastamiseks</li>
+    <li><code>payment_url</code> – maksevormi aadress</li>
+    <li><code>type</code> – panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
+    <li><code>name</code> – Makselahenduse nimi</li>
+    <li><code>description</code> – Makselahenduse kirjeldus (kui on määratud)</li>
+    <li><code>account_owner</code> – Konto omaniku nimi (kui on määratud)</li>
+    <li><code>account_nr</code> – Konto number (kui on määratud)</li>
+    <li><code>key_size</code> – Privaatvõtme suurus (kui on määratud)</li>
+    <li><code>return_url</code> – Tagasisuunamise aadress peale makse sooritamist (kui on määratud)</li>
+    <li><code>private_key</code> – salajane võti panka mineva makse andmete allkirjastamiseks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
+    <li><code>bank_certificate</code> – panga sertifikaat pangast saabunud maksekinnituse kontrolliks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
+    <li><code>mac_key</code> – Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks (ainult Nordea puhul)</li>
+    <li><code>algo</code> – Allkirjastamise algoritm (ainult Nordea puhul)</li>
+    <li><code>auto_response</code> – Juhul kui on tõene, siis pank teeb automaatpäringu makse infoga (ainult Nordea puhul)</li>
 </ul>
 
 <h4><strong>Demo</strong></h4>
@@ -171,35 +171,35 @@
 <h5>Sisendparameetrid</h5>
 
 <ul>
-    <li><code>type</code> - panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
-    <li><code>name</code> - Makselahenduse nimi</li>
-    <li><code>description</code> - Makselahenduse kirjeldus. Pole kohustuslik</li>
-    <li><code>account_owner</code> - Konto omaniku nimi. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi kasutatakse makselahenduse nime</li>
-    <li><code>account_nr</code> - Konto number. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi genereeritakse suvaline number</li>
-    <li><code>key_size</code> - Avaliku võtme süsteemi kasutavate pankade puhul privaatvõtme suurus (üks nimekirjast: 1024, 2048, 4096). Pole kohustuslik, vaikimisi kasutatakse 1024</li>
-    <li><code>return_url</code> - Tagasisuunamise aadress peale makse sooritamist. Kohustuslik vaid Pankade Kaardikeskuse valiku korral, muudel juhtudel ei kasutata</li>
-    <li><code>algo</code> - Allkirjastamise algoritm (üks valikust: md5, sha1). Pole kohustuslik. Vajalik vaid Nordea valiku korral, muudel juhtudel ei kasutata. Kui on määramata, kasutatakse väärtust "MD5"</li>
-    <li><code>auto_response</code> - Kas pank peaks tegema automaatpäringu makse teostamisel (<em>true</em> või <em>false</em>. Pole kohustuslik. Vajalik vaid Nordea valiku korral. Vaikimisi automaatpäringut ei tehta</li>
+    <li><code>type</code> – panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
+    <li><code>name</code> – Makselahenduse nimi</li>
+    <li><code>description</code> – Makselahenduse kirjeldus. Pole kohustuslik</li>
+    <li><code>account_owner</code> – Konto omaniku nimi. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi kasutatakse makselahenduse nime</li>
+    <li><code>account_nr</code> – Konto number. Vajalik ipizza tüüpi pankade puhul teenuse 1002 kasutamiseks. Pole kohustuslik, vaikimisi genereeritakse suvaline number</li>
+    <li><code>key_size</code> – Avaliku võtme süsteemi kasutavate pankade puhul privaatvõtme suurus (üks nimekirjast: 1024, 2048, 4096). Pole kohustuslik, vaikimisi kasutatakse 1024</li>
+    <li><code>return_url</code> – Tagasisuunamise aadress peale makse sooritamist. Kohustuslik vaid Pankade Kaardikeskuse valiku korral, muudel juhtudel ei kasutata</li>
+    <li><code>algo</code> – Allkirjastamise algoritm (üks valikust: md5, sha1). Pole kohustuslik. Vajalik vaid Nordea valiku korral, muudel juhtudel ei kasutata. Kui on määramata, kasutatakse väärtust "MD5"</li>
+    <li><code>auto_response</code> – Kas pank peaks tegema automaatpäringu makse teostamisel (<em>true</em> või <em>false</em>. Pole kohustuslik. Vajalik vaid Nordea valiku korral. Vaikimisi automaatpäringut ei tehta</li>
 </ul>
 
 <h5>Vastusparameetrid</h5>
 
 <ul>
-    <li><code>id</code> - makselahenduse identifikaator</li>
-    <li><code>client_id</code> - kliendi tunnuskood pangale edastamiseks</li>
-    <li><code>payment_url</code> - maksevormi aadress</li>
-    <li><code>type</code> - panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
-    <li><code>name</code> - Makselahenduse nimi</li>
-    <li><code>description</code> - Makselahenduse kirjeldus (kui on määratud)</li>
-    <li><code>account_owner</code> - Konto omaniku nimi (kui on määratud)</li>
-    <li><code>account_nr</code> - Konto number (kui on määratud)</li>
-    <li><code>key_size</code> - Privaatvõtme suurus (kui on määratud)</li>
-    <li><code>return_url</code> - Tagasisuunamise aadress peale makse sooritamist (kui on määratud)</li>
-    <li><code>private_key</code> - salajane võti panka mineva makse andmete allkirjastamiseks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
-    <li><code>bank_certificate</code> - panga sertifikaat pangast saabunud maksekinnituse kontrolliks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
-    <li><code>mac_key</code> - Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks (ainult Nordea puhul)</li>
-    <li><code>algo</code> - Allkirjastamise algoritm (ainult Nordea puhul)</li>
-    <li><code>auto_response</code> - Juhul kui on tõene, siis pank teeb automaatpäringu makse infoga (ainult Nordea puhul)</li>
+    <li><code>id</code> – makselahenduse identifikaator</li>
+    <li><code>client_id</code> – kliendi tunnuskood pangale edastamiseks</li>
+    <li><code>payment_url</code> – maksevormi aadress</li>
+    <li><code>type</code> – panga tüüp (üks nimekirjast: swedbank, seb, sampo, krediidipank, ipizza, nordea, ec, swedbank.lv, swedbank.lt, lhv)</li>
+    <li><code>name</code> – Makselahenduse nimi</li>
+    <li><code>description</code> – Makselahenduse kirjeldus (kui on määratud)</li>
+    <li><code>account_owner</code> – Konto omaniku nimi (kui on määratud)</li>
+    <li><code>account_nr</code> – Konto number (kui on määratud)</li>
+    <li><code>key_size</code> – Privaatvõtme suurus (kui on määratud)</li>
+    <li><code>return_url</code> – Tagasisuunamise aadress peale makse sooritamist (kui on määratud)</li>
+    <li><code>private_key</code> – salajane võti panka mineva makse andmete allkirjastamiseks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
+    <li><code>bank_certificate</code> – panga sertifikaat pangast saabunud maksekinnituse kontrolliks (ainult avaliku võtme süsteemi kasutavate pankade puhul)</li>
+    <li><code>mac_key</code> – Salajane MAC võti päringute allkirjastamiseks ja valideerimiseks (ainult Nordea puhul)</li>
+    <li><code>algo</code> – Allkirjastamise algoritm (ainult Nordea puhul)</li>
+    <li><code>auto_response</code> – Juhul kui on tõene, siis pank teeb automaatpäringu makse infoga (ainult Nordea puhul)</li>
 </ul>
 
 <h4><strong>Demo</strong></h4>
@@ -249,8 +249,8 @@
 <h3>API muudatuste ajalugu</h3>
 
 <ul>
-    <li><strong>16.08.2013</strong> - API päringud peavad käima läbi <a href="https://www.mashape.com/">Mashape</a> API proksi</li>
-    <li><strong>01.07.2013</strong> - lisatud lisaparameetrite võimalus (PANGALINK_NAME, PANGALINK_ACCOUNT, PANGALINK_AUTOPAY)</li>
-    <li><strong>29.06.2013</strong> - kustutatud makselahenduse andmetest <code>expiration_time</code> parameeter seoses sertifikaatide aegumise peatamisega</li>
-    <li><strong>27.06.2013</strong> - lisatud esimene API versioon, lubatud makselahenduste GET, POST ja DELETE</li>
+    <li><strong>16.08.2013</strong> – API päringud peavad käima läbi <a href="https://www.mashape.com/">Mashape</a> API proksi</li>
+    <li><strong>01.07.2013</strong> – lisatud lisaparameetrite võimalus (PANGALINK_NAME, PANGALINK_ACCOUNT, PANGALINK_AUTOPAY)</li>
+    <li><strong>29.06.2013</strong> – kustutatud makselahenduse andmetest <code>expiration_time</code> parameeter seoses sertifikaatide aegumise peatamisega</li>
+    <li><strong>27.06.2013</strong> – lisatud esimene API versioon, lubatud makselahenduste GET, POST ja DELETE</li>
 </ul>
