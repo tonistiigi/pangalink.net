@@ -26,7 +26,7 @@ Näiteks juhul kui makse on õnnestunud, peaks "tagasi kaupmehe juurde" lehel le
 
 ### Makse nupud
 
-Kõik nupud on märgistatud atribudiga `data-button`, mille väärtused on järgnevad
+Kõik nupud on märgistatud atribudiga `data-button`, mille väärtused on järgnevad:
 
   * **accept** – makse kinnitamise nupp (makse eelvaate lehel)
   * **cancel** – makse katkestamise nupp (makse eelvaate lehel)
@@ -48,7 +48,7 @@ Näide:
 
     document.querySelector("[data-input=sender-name]").value = "Foo Bar"
 
-### Sisend ja väljundandmed
+### Sisend- ja väljundandmed
 
 Kõik POST sisendparameetrid leiab makse eelvaate lehel `data-in-key` atribuutide abil, kus `data-in-key` väärtuseks on POST parameetri võti ning samas elemendis asuv `data-in-value` sisaldab selle parameetri väärtust.
 
