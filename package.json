@@ -10,7 +10,6 @@
   },
   "author": "Andris Reinman",
   "license": "MIT",
-
   "dependencies": {
     "express": "*",
     "ejs": "*",
@@ -30,6 +29,7 @@
     "zipstream": "*",
     "yub": "*",
     "marked": "~0.3.0",
-    "highlight.js": "~7.5.0"
+    "highlight.js": "~7.5.0",
+    "iban": "~0.0.2"
   }
 }

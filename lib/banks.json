@@ -13,8 +13,9 @@
         "cancelAddress": "VK_RETURN",
         "returnMethod": "GET",
         "id": "HP",
-        "accountNrPrefix": 22,
-        "accountNrLength": 12,
+        "accountNr": "EE152200221234567897",
+        "prefix": ["22", "11"],
+        "country": "EE",
         "fieldLength":{
             "VK_SERVICE": 4,
             "VK_VERSION": 3,
@@ -22,7 +23,7 @@
             "VK_STAMP": 20,
             "VK_AMOUNT": 17,
             "VK_CURR": 3,
-            "VK_ACC": 16,
+            "VK_ACC": 20,
             "VK_NAME": 70,
             "VK_REF": 20,
             "VK_MSG": 300,
@@ -43,8 +44,9 @@
         "cancelAddress": "VK_CANCEL",
         "rejectAddress": "VK_CANCEL",
         "id": "EYP",
-        "accountNrPrefix": 10,
-        "accountNrLength": 14,
+        "accountNr": "EE171010123456789017",
+        "prefix": "10",
+        "country": "EE",
         "utf8length": "bytes",
         "fieldLength":{
             "VK_SERVICE": 4,
@@ -53,7 +55,7 @@
             "VK_STAMP": 20,
             "VK_AMOUNT": 17,
             "VK_CURR": 3,
-            "VK_ACC": 16,
+            "VK_ACC": 20,
             "VK_NAME": 40,
             "VK_REF": 20,
             "VK_MSG": 70,
@@ -71,8 +73,9 @@
         "returnAddress": "VK_RETURN",
         "cancelAddress": "VK_RETURN",
         "id": "SAMPOPANK",
-        "accountNrPrefix": 33,
-        "accountNrLength": 12,
+        "accountNr": "EE823300331234567897",
+        "prefix": "33",
+        "country": "EE",
         "disallowQueryParams": true,
         "fieldLength":{
             "VK_SERVICE": 4,
@@ -81,7 +84,7 @@
             "VK_STAMP": 20,
             "VK_AMOUNT": 17,
             "VK_CURR": 3,
-            "VK_ACC": 16,
+            "VK_ACC": 20,
             "VK_NAME": 70,
             "VK_REF": 20,
             "VK_MSG": 210,
@@ -110,8 +113,9 @@
         "allowedServices": [
             "1002"
         ],
-        "accountNrPrefix": 42,
-        "accountNrLength": 13,
+        "accountNr": "EE684204212345678907",
+        "prefix": "42",
+        "country": "EE",
         "utf8length": "bytes",
         "fieldLength":{
             "VK_SERVICE": 4,
@@ -135,8 +139,9 @@
         "returnAddress": "VK_RETURN",
         "cancelAddress": "VK_RETURN",
         "id": "GENIPIZZA",
-        "accountNrPrefix": 99,
-        "accountNrLength": 12
+        "accountNr": "EE871600161234567892",
+        "prefix": "16",
+        "country": "EE"
     },
     "nordea": {
         "key": "nordea",
@@ -148,8 +153,9 @@
         "cancelAddress": "CANCEL",
         "rejectAddress": "REJECT",
         "id": "NORDEA",
-        "accountNrPrefix": 17,
-        "accountNrLength": 11,
+        "accountNr": "EE561700017123456786",
+        "prefix": "17",
+        "country": "EE",
         "fieldLength": {
             "VERSION": 4,
             "STAMP": 20,
@@ -176,8 +182,6 @@
         "name": "Pankade Kaardikeskuse Emulaator",
         "charset": false,
         "id": "ECOMMERCE",
-        "accountNrPrefix": 99,
-        "accountNrLength": 12,
         "defaultCharset": "ISO-8859-1",
         "allowedCharsets": [
             "ISO-8859-1",
@@ -211,8 +215,9 @@
         "returnAddress": "VK_RETURN",
         "cancelAddress": "VK_RETURN",
         "id": "LHV",
-        "accountNrPrefix": 77,
-        "accountNrLength": 12,
+        "accountNr": "EE597700771234567897",
+        "prefix": "77",
+        "country": "EE",
         "utf8length": "bytes",
         "fieldLength":{
             "VK_SERVICE": 4,
@@ -221,7 +226,7 @@
             "VK_STAMP": 20,
             "VK_AMOUNT": 17,
             "VK_CURR": 3,
-            "VK_ACC": 16,
+            "VK_ACC": 20,
             "VK_NAME": 70,
             "VK_REF": 20,
             "VK_MSG": 210,
@@ -247,8 +252,8 @@
         "cancelAddress": "VK_RETURN",
         "returnMethod": "GET",
         "id": "HP",
-        "accountNrPrefix": 22,
-        "accountNrLength": 12
+        "accountNr": "LV80BANK0000435195001",
+        "country": "LV"
     },
     "swedbank.lt": {
         "key": "swedbank.lt",
@@ -267,8 +272,8 @@
         "cancelAddress": "VK_RETURN",
         "returnMethod": "GET",
         "id": "HP",
-        "accountNrPrefix": 22,
-        "accountNrLength": 12
+        "accountNr": "LT121000011101001000",
+        "country": "LT"
     },
     "tapiola": {
         "key": "tapiola",
@@ -280,8 +285,8 @@
         "cancelAddress": "AAB_CANCEL",
         "rejectAddress": "AAB_REJECT",
         "id": "TAPIOLA",
-        "accountNrPrefix": 363,
-        "accountNrLength": 14,
+        "accountNr": "FI3936363002092492",
+        "country": "FI",
         "fieldLength": {
             "AAB_VERSION": 4,
             "AAB_STAMP": 15,
@@ -311,8 +316,8 @@
         "cancelAddress": "NET_CANCEL",
         "rejectAddress": "NET_REJECT",
         "id": "HANDELS",
-        "accountNrPrefix": 363,
-        "accountNrLength": 14,
+        "accountNr": "FI7331313001000058",
+        "country": "FI",
         "fieldLength": {
             "NET_VERSION": 3,
             "NET_STAMP": 20,
@@ -338,8 +343,8 @@
         "cancelAddress": "AAB_CANCEL",
         "rejectAddress": "AAB_REJECT",
         "id": "ALANDSBANKEN",
-        "accountNrPrefix": 363,
-        "accountNrLength": 14,
+        "accountNr": "FI4966010001234567",
+        "country": "FI",
         "fieldLength": {
             "AAB_VERSION": 4,
             "AAB_STAMP": 15,
@@ -369,8 +374,8 @@
         "cancelAddress": "NET_CANCEL",
         "rejectAddress": "NET_REJECT",
         "id": "AKTIA",
-        "accountNrPrefix": 363,
-        "accountNrLength": 14,
+        "accountNr": "FI1840551010234569",
+        "country": "FI",
         "fieldLength": {
             "NET_VERSION": 3,
             "NET_STAMP": 20,
