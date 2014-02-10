@@ -8,7 +8,7 @@
 <?php
 
 // THIS IS AUTO GENERATED SCRIPT
-// (c) 2011 - <%- new Date().getFullYear()%> Kreata OÜ www.pangalink.net
+// (c) 2011-<%- new Date().getFullYear()%> Kreata OÜ www.pangalink.net
 
 // STEP 1. Setup private key
 // =========================
@@ -56,6 +56,8 @@ payment.fields.forEach(function(field){
 // ========================================================
 
 openssl_sign ($data, $signature, $private_key, OPENSSL_ALGO_SHA1);
+<% if(fields.VK_MAC){%>
+/* <%= fields.VK_MAC %> */<%}%>
 $fields["VK_MAC"] = base64_encode($signature);
 
 // STEP 5. Generate POST form with payment data that will be sent to the bank
