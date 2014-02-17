@@ -2,6 +2,7 @@
 
 <h2><%= payment.state == "PAYED" ? "Makse teostatud" : (payment.state == "REJECTED" ? "Makse tagasi lükatud" : "Makse katkestatud") %></h2>
 
+<span data-current-state="<%= payment.state.toLowerCase() %>"></span>
 <span data-payment-state="<%= payment.state %>"></span>
 
 <p>Kliki nupul, et lõpetada maksekorraldus ja pöörduda koos makse tulemusega tagasi kaupmehe saidile.</p>

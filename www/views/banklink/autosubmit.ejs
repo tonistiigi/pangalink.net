@@ -14,6 +14,7 @@
 
         <p>Makse automaatselt <%= {"PAYED": "teostatud", "CANCELLED": "katkestatud", "REJECTED": "tagasi lükatud"}[payment.state] %>, suunatakse tagasi kaupmehe juurde...</p>
 
+        <div data-current-state="<%= payment.state.toLowerCase() %>"></div>
         <div data-payment-state="<%= payment.state %>"></div>
 
 <% if(method == "POST"){%>

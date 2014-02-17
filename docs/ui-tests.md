@@ -6,15 +6,15 @@ Pangalink.net on automaattestisõbralik, kõik olulisemad väärtused on kirjeld
 
 Makse staatuse leiab järgmisest väljast:
 
-    document.querySelector("[data-payment-state]").dataset.paymentState
+    document.querySelector("[data-current-state]").dataset.paymentState
 
 Võimalikud väärtused:
 
-  * **PREVIEW** – ees on maksekorralduse eelvaade
-  * **PAYED** – maksekorraldus on aktsepteeritud ("tagasi kaupmehe juurde" leht)
-  * **REJECTED** – maksekorraldus on tehnilistel põhjustel tagasi lükatud ("tagasi kaupmehe juurde" leht)
-  * **CANCELLED** – maksekorraldus on kasutaja poolt katkestatud ("tagasi kaupmehe juurde" leht)
-  * **ERRORED** – makse andmeid ei aktsepteeritud, vt. ka `data-payment-error` välja
+  * **preview** – ees on maksekorralduse eelvaade
+  * **payed** – maksekorraldus on aktsepteeritud ("tagasi kaupmehe juurde" leht)
+  * **rejected** – maksekorraldus on tehnilistel põhjustel tagasi lükatud ("tagasi kaupmehe juurde" leht)
+  * **cancelled** – maksekorraldus on kasutaja poolt katkestatud ("tagasi kaupmehe juurde" leht)
+  * **error** – makse andmeid ei aktsepteeritud, vt. ka `data-payment-error` välja
 
 Juhul kui makse andmeid ei aktsepteeritud, leiab veateate kirjelduse teksti kujul järgmisest väljast:
 
@@ -22,7 +22,7 @@ Juhul kui makse andmeid ei aktsepteeritud, leiab veateate kirjelduse teksti kuju
 
 Näiteks juhul kui makse on õnnestunud, peaks "tagasi kaupmehe juurde" lehel leiduma järgmine element:
 
-    document.querySelector("[data-payment-state=PAYED]")
+    document.querySelector("[data-current-state=payed]")
 
 ### Makse nupud
 
