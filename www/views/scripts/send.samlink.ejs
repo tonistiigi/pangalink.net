@@ -26,7 +26,7 @@ $fields = array(
 <% payment.fields.forEach(function(field, i){ -%>
 <% fields[field.key] = field.value -%>
 <% if(field.key != "NET_MAC"){ -%>
-        "<%- field.key %>" <%- field.key.length < 15 && new Array(15 - field.key.length).join(" ") || "" %>=> "<%- field.value.replace(/\\/g, "\\\\").replace(/"/g, "\\\"").replace(/\r/g, "\\r").replace(/\n/g, "\\n") %>"<%- i < payment.fields.length - 1  && "," || "" %>
+        "<%- field.key %>" <%- field.key.length < 15 && new Array(15 - field.key.length).join(" ") || "" %>=> <%- !/%(RETURN|CANCEL|REJECT)%/.test(field.value) ? '"' + field.value.replace(/\\/g, "\\\\").replace(/"/g, "\\\"").replace(/\r/g, "\\r").replace(/\n/g, "\\n")+'"': "($_SERVER[\"HTTPS\"]?\"https\":\"http\").\"://\".$_SERVER[\"HTTP_HOST\"].dirname($_SERVER[\"PHP_SELF\"]).\"/confirm.php?action=" + field.value.toLowerCase().replace(/%/g, "")+"\"" %><%- i < payment.fields.length - 1  && "," || "" %>
 <% } -%>
 <% }) -%>
 );
