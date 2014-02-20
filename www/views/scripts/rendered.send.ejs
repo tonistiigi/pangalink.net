@@ -5,6 +5,7 @@
         <title>Example payment usage - <%= bank.name %> - pangalink.net</title>
     </head>
     <body>
+        <p><a href="/project/<%= project._id %>/example/send.php">Lae selle rakenduse lähtekood</a></p>
         <form method="post" action="https://pangalink.net/banklink/<%- bank.key %>">
 
             <!-- include all values as hidden form fields -->
