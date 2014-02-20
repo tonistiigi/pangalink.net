@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="<%- payment.charset.toLowerCase() %>" />
+        <title>Example payment usage - <%= bank.name %> - pangalink.net</title>
+    </head>
+    <body>
+        <form method="post" action="https://pangalink.net/banklink/<%- bank.key %>">
+
+            <!-- include all values as hidden form fields -->
+<% payment.fields.forEach(function(field, i){ -%>
+            <input type="hidden" name="<%= field.key %>" value="<%= field.value %>" />
+<% }) %>
+
+            <!-- when the user clicks "Pay" form data is sent to the bank -->
+            <input type="submit" value="Pay" />
+
+        </form>
+    </body>
+</html>
