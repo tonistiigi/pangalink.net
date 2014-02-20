@@ -1,17 +1,17 @@
         <form method="post" action="https://pangalink.net/banklink/<%- bank.key %>">
             <!-- include all values as hidden form fields -->
-            <?php foreach($fields as $key => $val):?>
+<?php foreach($fields as $key => $val):?>
             <input type="hidden" name="<?php echo $key; ?>" value="<?php echo htmlspecialchars($val); ?>" />
-            <?php endforeach; ?>
+<?php endforeach; ?>
 
             <!-- draw table output for demo -->
             <table>
-                <?php foreach($fields as $key => $val):?>
+<?php foreach($fields as $key => $val):?>
                 <tr>
                     <td><strong><code><?php echo $key; ?></code></strong></td>
                     <td><code><?php echo htmlspecialchars($val); ?></code></td>
                 </tr>
-                <?php endforeach; ?>
+<?php endforeach; ?>
 
                 <!-- when the user clicks "Pay" form data is sent to the bank -->
                 <tr><td colspan="2"><input type="submit" value="Pay" /></td></tr>
