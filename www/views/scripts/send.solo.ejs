@@ -58,16 +58,8 @@ $fields["<%= "SOLOPMT_VERSION" in fields ? "SOLOPMT_" : "" %>MAC"] = strtoupper(
 // STEP 5. Generate POST form with payment data that will be sent to the bank
 // ==========================================================================
 ?>
-        <form method="post" action="https://pangalink.net/banklink/<%- bank.key %>">
 
-            <!-- include all values as hidden form fields -->
-<?php foreach($fields as $key => $val):?>
-            <input type="hidden" name="<?php echo $key; ?>" value="<?php echo htmlspecialchars($val); ?>" />
-<?php endforeach; ?>
+<% include form.send.ejs %>
 
-            <!-- when the user clicks "Pay" form data is sent to the bank -->
-            <input type="submit" value="Pay" />
-
-        </form>
     </body>
 </html>
