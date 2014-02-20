@@ -69,7 +69,7 @@
                 </th>
                 <td>
                     <p>
-                        <a href="/project/<%= project._id %>/user_key.pem" target="_blank" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> user_key.pem</a>
+                        <a href="/project/<%= project._id %>/user_key.pem" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> user_key.pem</a>
                         <small>Selle võtmefailiga tuleb allkirjastada panka mineva makse andmed</small
                     </p>
                     <p>
@@ -83,7 +83,7 @@
                     Kaupmehe sertifikaat
                 </th>
                 <td>
-                    <a class="btn" href="/project/<%= project._id %>/user_cert.pem" target="_blank"><i class="icon-download"></i>user_cert.pem</a>
+                    <a class="btn" href="/project/<%= project._id %>/user_cert.pem"><i class="icon-download"></i>user_cert.pem</a>
                     <small>Selle sertifikaadi abil kontrollib pank makse andmete kehtivust</small>
                 </td>
             </tr>
@@ -93,7 +93,7 @@
                     Panga salajane võti
                 </th>
                 <td>
-                    <a class="btn" href="/project/<%= project._id %>/bank_key.pem" target="_blank"><i class="icon-download"></i>bank_key.pem</a>
+                    <a class="btn" href="/project/<%= project._id %>/bank_key.pem"><i class="icon-download"></i>bank_key.pem</a>
                     <small>Selle võtmefailiga allkirjastab pank makse kinnituse andmed</small>
                 </td>
             </tr>
@@ -104,7 +104,7 @@
                 </th>
                 <td>
                     <p>
-                        <a href="/project/<%= project._id %>/bank_cert.pem" target="_blank" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> bank_cert.pem</a>
+                        <a href="/project/<%= project._id %>/bank_cert.pem" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> bank_cert.pem</a>
                         <small>Selle sertifikaadi abil tuleb kontrollida pangast saabunud maksekinnituse kehtivust</small>
                     </p>
                     <p>
@@ -142,11 +142,11 @@
             </th>
             <td>
                 <p>
-                    <a href="/project/<%= project._id %>/example/send.php" target="_blank" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> send.php</a>
+                    <a href="/project/<%= project._id %>/example/send.php" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span> send.php</a>
                     <small>PHP näidisrakendus selle makselahenduse andmetega makse algatamiseks (ei sisalda laekunud kinnituse kontrolli).</small
                 </p>
                 <p>
-                    Näidisrakendust makse teostamiseks <a href="/project/<%= project._id %>/example/render/send.php" target="_blank"><span class="glyphicon glyphicon-share-alt"></span> saab proovida siin</a>
+                    Näidisrakendust makse teostamiseks <a href="/project/<%= project._id %>/example/render/send.php"><span class="glyphicon glyphicon-share-alt"></span> saab proovida siin</a>
                 </p>
             </td>
         </tr>
