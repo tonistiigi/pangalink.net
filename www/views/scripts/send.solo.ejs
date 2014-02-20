@@ -51,7 +51,7 @@ data += project.secret + "&"
 // STEP 4. Sign the data with <%= project.soloAlgo.toUpperCase() %> to generate MAC code
 // ========================================================
 
-<% if(fields.VK_MAC){%>
+<% if(fields.MAC || fields.SOLOPMT_MAC){%>
 /* <%= fields.MAC || fields.SOLOPMT_MAC %> */<%}%>
 $fields["<%= "SOLOPMT_VERSION" in fields ? "SOLOPMT_" : "" %>MAC"] = strtoupper(<%= project.soloAlgo %>($data));
 

@@ -94,7 +94,7 @@ if(!function_exists("mb_str_pad")){
 
 openssl_sign ($data, $signature, $private_key, OPENSSL_ALGO_SHA1);
 
-<% if(fields.VK_MAC){%>
+<% if(fields.mac){%>
 /* <%= fields.mac %> */<%}%>
 $fields["mac"] = bin2hex($signature);
 
