@@ -9,14 +9,14 @@
 
             <!-- include all values as hidden form fields -->
 <% payment.fields.forEach(function(field, i){ -%>
-            <input type="hidden" name="<%= field.key %>" value="<%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, "https://pangalink.net/project/" + project._id) %>" />
+            <input type="hidden" name="<%= field.key %>" value="<%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, project.ecUrl || ("https://pangalink.net/project/" + project._id)) %>" />
 <% }) %>
 
             <table>
 <% payment.fields.forEach(function(field, i){ -%>
                 <tr>
                     <td><strong><code><%= field.key %></code></strong></td>
-                    <td><code><%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, "https://pangalink.net/project/" + project._id) %></code></td>
+                    <td><code><%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, project.ecUrl || ("https://pangalink.net/project/" + project._id)) %></code></td>
                 </tr>
 <% }) %>
                 <!-- when the user clicks "Pay" form data is sent to the bank -->
