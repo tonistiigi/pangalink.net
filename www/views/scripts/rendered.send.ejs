@@ -9,7 +9,7 @@
 
             <!-- include all values as hidden form fields -->
 <% payment.fields.forEach(function(field, i){ -%>
-            <input type="hidden" name="<%= field.key %>" value="<%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, "https://pangalink.net/project/" + project.id) %>" />
+            <input type="hidden" name="<%= field.key %>" value="<%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, "https://pangalink.net/project/" + project._id) %>" />
 <% }) %>
 
             <table>
