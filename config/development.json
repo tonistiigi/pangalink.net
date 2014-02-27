@@ -54,6 +54,8 @@
         "#": "Sender address",
         "from": "Pangalink <no-reply@pangalink.net>",
 
+        "type": "SMTP",
+
         "#": "SMTP settings for Nodemailer",
         "smtp":{
             "host": "localhost"
