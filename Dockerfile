@@ -1,5 +1,7 @@
 FROM ubuntu
 
+RUN apt-mark hold initscripts udev plymouth mountall
+
 # Uuenda süsteem
 RUN apt-get update
 RUN apt-get upgrade -y
