@@ -8,7 +8,7 @@ Käivita selle jaoks pangalink.net [docker konteiner](https://index.docker.io/u/
 
     sudo docker run -d -p 80:80 andris9/pangalink.net
 
-Ning ava brauseris [localhost](http://localhost).
+Ning ava brauseris [localhost](http://localhost) või selle serveri domeeninimi, milles konteineri käivitasid.
 
 **NB** Esimene käivitus võib võtta mõnevõrra aega. Andmebaas asub käivitatud konteineri sees, seega konteineri kustutamisel kaovad ka andmed.
 
