@@ -4,12 +4,13 @@
 
 Kui kasutad [dockerit](http://docker.io/) on pangalink.net käivitamine imelihtne.
 
-Käivita selle jaoks pangalink.net docker konteiner:
+Käivita selle jaoks pangalink.net [docker konteiner](https://index.docker.io/u/andris9/pangalink.net/):
 
-    sudo docker build -t=pangalink.net git://github.com/andris9/pangalink.net.git
-    sudo docker run -d -p 80:80 pangalink.net
+    sudo docker run -d -p 80:80 andris9/pangalink.net
 
-Ja ava brauseris [localhost](http://localhost).
+Ning ava brauseris [localhost](http://localhost).
+
+**NB** Esimene käivitus võib võtta mõnevõrra aega. Andmebaas asub käivitatud konteineri sees, seega konteineri kustutamisel kaovad ka andmed.
 
 ## Tavainstall
 
