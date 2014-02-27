@@ -1,5 +1,18 @@
 # Pangalink.net
 
+## Kiirinstall
+
+Kui kasutad [dockerit](http://docker.io/) on pangalink.net käivitamine imelihtne.
+
+Käivita selle jaoks pangalink.net docker konteiner:
+
+    sudo docker build -t=pangalink.net git://github.com/andris9/pangalink.net.git
+    sudo docker run -d -p 80:80 pangalink.net
+
+Ja ava brauseris [localhost](http://localhost).
+
+## Tavainstall
+
 ## Eeldused
 
   * [Node.js](http://nodejs.org/)
