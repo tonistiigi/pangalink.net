@@ -4,7 +4,7 @@
 
 <h3 id="kontakt">Kontakt</h3>
 
-<p><%= title %> teenust haldab:</p>
+<p>Pangalink.net teenust haldab:</p>
 
 <address>
   <strong>Kreata OÜ</strong><br>
@@ -23,7 +23,7 @@
 
 <h3 id="vigadest_teatamine">Staatus</h3>
 
-<%= title %> süsteemi olekut saab kontrollida aadressil <a href="http://status.pangalink.net/">status.pangalink.net</a>.
+Pangalink.net süsteemi olekut saab kontrollida aadressil <a href="http://status.pangalink.net/">status.pangalink.net</a>.
 
 <h3 id="vigadest_teatamine">Vigadest teatamine</h3>
 
@@ -104,7 +104,7 @@
         <td><code>SAMPOPANK</code></td>
         <td>-</td>
         <td><b>ISO-8859-1</b></td>
-        <td><a href="https://<%= hostname %>/banklink/sampo">[link]</a></td>
+        <td><a href="<%= proto %>://<%= hostname %>/banklink/sampo">[link]</a></td>
 
         <td><a href="https://www2.danskebank.ee/ibank/pizza/pizza">[link]</a></td>
         <td><code>008</code></td>
@@ -120,7 +120,7 @@
             UTF-8<br />
             Win-1257
             </td>
-        <td><a href="https://<%= hostname %>/banklink/krediidipank">[link]</a></td>
+        <td><a href="<%= proto %>://<%= hostname %>/banklink/krediidipank">[link]</a></td>
 
         <td><a href="https://i-pank.krediidipank.ee/teller/maksa">[link]</a></td>
         <td><code>008</code></td>
@@ -135,7 +135,7 @@
         <td><b>ISO-8859-1</b><br />
             UTF-8<br />
             WINDOWS-1257</td>
-        <td><a href="https://<%= hostname %>/banklink/lhv">[link]</a></td>
+        <td><a href="<%= proto %>://<%= hostname %>/banklink/lhv">[link]</a></td>
 
         <td><a href="https://www.lhv.ee/banklink">[link]</a></td>
         <td><code>008</code></td>
@@ -148,7 +148,7 @@
         <td>-</td>
         <td>-</td>
         <td><b>ISO-8859-1</b></td>
-        <td><a href="https://<%= hostname %>/banklink/nordea">[link]</a></td>
+        <td><a href="<%= proto %>://<%= hostname %>/banklink/nordea">[link]</a></td>
         <td><a href="https://netbank.nordea.com/pnbepay/epayn.jsp">[link]</a></td>
         <td><code>0002</code> <code>0003</code> <code>0004</code></td>
         <td>-</td>
@@ -160,7 +160,7 @@
         <td>-</td>
         <td><code>charEncoding</code></td>
         <td><b>ISO-8859-1</b><br />UTF-8 ***</td>
-        <td><a href="https://<%= hostname %>/banklink/ec">[link]</a></td>
+        <td><a href="<%= proto %>://<%= hostname %>/banklink/ec">[link]</a></td>
         <td><a href="https://pos.estcard.ee/webpos/servlet/iPAYServlet">[link]</a></td>
         <td><code>002</code>&nbsp;**** <code>004</code></td>
         <td>sümbolid?</td>
@@ -173,7 +173,7 @@
         <td><code>VK_CHARSET</code></td>
         <td><b>ISO-8859-1</b><br />
             UTF-8</td>
-        <td><a href="https://<%= hostname %>/banklink/seb">[link]</a></td>
+        <td><a href="<%= proto %>://<%= hostname %>/banklink/seb">[link]</a></td>
 
         <td><a href="https://www.seb.ee/cgi-bin/unet3.sh/un3min.r">[link]</a></td>
         <td><code>008</code></td>
@@ -188,7 +188,7 @@
         <td><b>ISO-8859-1</b><br />
             UTF-8<br />
             ISO-8859-4 *****</td>
-        <td><a href="https://<%= hostname %>/banklink/swedbank">[link]</a></td>
+        <td><a href="<%= proto %>://<%= hostname %>/banklink/swedbank">[link]</a></td>
 
         <td><a href="https://www.swedbank.ee/banklink">[link]</a></td>
         <td><code>008</code></td>
@@ -202,7 +202,7 @@
 
 * Väärtused näitavad, kas unikood kodeeringu puhul tuleb stringi pikkuse arvutamisel arvestada sübolite või baitide arvuga. Mitte-unikood kodeeringu puhul on sümbolite ja baitide arv alati võrdne.<br />
 
-** Juhul kui kodeering pole määratud parameetriga <code>VK_CHARSET</code>, kasutatakse ISO-8859-13 kodeeringut, kuid allkirjastamisel täpitähti ei arvestata. Pangalink.net nõuab seetõttu Krediidipanga puhul alati <code>VK_CHARSET</code> parameetri kasutamist.<br />
+** Juhul kui kodeering pole määratud parameetriga <code>VK_CHARSET</code>, kasutatakse ISO-8859-13 kodeeringut, kuid allkirjastamisel täpitähti ei arvestata. <%= title %> nõuab seetõttu Krediidipanga puhul alati <code>VK_CHARSET</code> parameetri kasutamist.<br />
 
 *** Ainult versioonis <code>004</code>.<br />
 

@@ -6,10 +6,13 @@
     "loggerInterface": "tiny",
 
     "#": "Domain name to be used all around the page",
-    "hostname": "pangalink.net",
+    "hostname": "",
+
+    "#": "Protocol to be used (if behind proxy might not autodetect correctly)",
+    "proto": "",
 
     "#": "Name of the service",
-    "title": "Pangalink.net",
+    "title": "",
 
     "#": "Twitter handle to be used in the menu bar",
     "twitter": "Pangalink_net",
@@ -52,13 +55,18 @@
     "mail":{
 
         "#": "Sender address",
-        "from": "Pangalink <no-reply@pangalink.net>",
+        "# from": "Pangalink.net <info@pangalink.net>",
+        "from": "",
 
-        "type": "SMTP",
+        "type": "direct",
 
         "#": "SMTP settings for Nodemailer",
         "smtp":{
             "host": "localhost"
+        },
+
+        "direct":{
+            "debug": true
         }
     },
 

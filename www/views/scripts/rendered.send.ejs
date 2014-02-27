@@ -5,20 +5,20 @@
         <title>Example payment usage - <%= bank.name %> - pangalink.net</title>
     </head>
     <body>
-        <h1><a href="https://pangalink.net/">Pangalink.net</a></h1>
+        <h1><a href="<%= proto %>://<%= hostname %>/"><%= title %></a></h1>
         <p>Testmakse rakendus <strong>"<%= project.name %>"</strong> (<a href="/project/<%= project._id %>/example/send.php">lae alla rakenduse lähtekood</a>)</p>
-        <form method="post" action="https://pangalink.net/banklink/<%- bank.key %>">
+        <form method="post" action="<%= proto %>://<%= hostname %>/banklink/<%- bank.key %>">
 
             <!-- include all values as hidden form fields -->
 <% payment.fields.forEach(function(field, i){ -%>
-            <input type="hidden" name="<%= field.key %>" value="<%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, project.ecUrl || ("https://pangalink.net/project/" + project._id)) %>" />
+            <input type="hidden" name="<%= field.key %>" value="<%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, project.ecUrl || (proto + "://" + hostname + "/project/" + project._id)) %>" />
 <% }) %>
 
             <table>
 <% payment.fields.forEach(function(field, i){ -%>
                 <tr>
                     <td><strong><code><%= field.key %></code></strong></td>
-                    <td><code><%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, project.ecUrl || ("https://pangalink.net/project/" + project._id)) %></code></td>
+                    <td><code><%= field.value.replace(/^%(RETURN|CANCEL|REJECT)%$/, project.ecUrl || (proto + "://" + hostname + "/project/" + project._id)) %></code></td>
                 </tr>
 <% }) %>
                 <!-- when the user clicks "Pay" form data is sent to the bank -->

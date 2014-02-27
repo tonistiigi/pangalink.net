@@ -1,7 +1,7 @@
-        <h1><a href="https://pangalink.net/">Pangalink.net</a></h1>
+        <h1><a href="<%= proto %>://<%= hostname %>/"><%= title %></a></h1>
         <p>Testmakse rakendus <strong>"<%= project.name %>"</strong></p>
 
-        <form method="post" action="https://pangalink.net/banklink/<%- bank.key %>">
+        <form method="post" action="<%= proto %>://<%= hostname %>/banklink/<%- bank.key %>">
             <!-- include all values as hidden form fields -->
 <?php foreach($fields as $key => $val):?>
             <input type="hidden" name="<?php echo $key; ?>" value="<?php echo htmlspecialchars($val); ?>" />
