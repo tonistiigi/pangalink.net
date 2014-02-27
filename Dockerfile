@@ -17,7 +17,7 @@ RUN mkdir -p /data/db
 
 # Installi pangalink.net
 RUN cd /opt && git clone git://github.com/andris9/pangalink.net.git && cd pangalink.net && npm install
-RUN sed 's/"SMTP"/"direct"/;s/3480/80/' /opt/pangalink.net/config/development.json > /opt/pangalink.net/config/production.json
+RUN sed 's/3480/80/' /opt/pangalink.net/config/development.json > /opt/pangalink.net/config/production.json
 
 ADD setup/start.sh /start.sh
 RUN chmod +x /start.sh
