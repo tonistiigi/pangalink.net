@@ -2,15 +2,13 @@
 
 ## Kiirinstall
 
-Kui kasutad [dockerit](http://docker.io/) on pangalink.net käivitamine imelihtne.
-
-Käivita selle jaoks pangalink.net [docker konteiner](https://index.docker.io/u/andris9/pangalink.net/):
+Kui kasutad [dockerit](http://docker.io/), on pangalink.net käivitamine imelihtne. Käivita selle jaoks pangalink.net [dockeri konteiner](https://index.docker.io/u/andris9/pangalink.net/):
 
     sudo docker run -d -p 80:80 andris9/pangalink.net
 
-Ning ava brauseris [localhost](http://localhost) või selle serveri domeeninimi, milles konteineri käivitasid.
+Ning ava brauseris [localhost](http://localhost) (või selle serveri domeeninimi, milles konteineri käivitasid).
 
-**NB** Esimene käivitus võib võtta mõnevõrra aega. Andmebaas asub käivitatud konteineri sees, seega konteineri kustutamisel kaovad ka andmed.
+**NB** Esimene käivitus võib võtta mõnevõrra aega. Andmebaas asub käivitatud konteineri sees, seega konteineri kustutamisel kaovad ka andmed (näiteks loodud makselahendused, nende võtmed jne).
 
 ## Tavainstall
 

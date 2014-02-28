@@ -24,9 +24,12 @@ RUN sed 's/3480/80/' /opt/pangalink.net/config/development.json > /opt/pangalink
 ADD setup/start.sh /start.sh
 RUN chmod +x /start.sh
 
+ADD https://github.com/andris9/pangalink.net/archive/master.tar.gz /opt/pangalink.net-master.tar.gz
+RUN cd /opt && tar xvf pangalink.net-master.tar.gz
+
 ENV NODE_ENV production
 
-# Luba port 3306 väljaspoolt
+# Luba port 80 väljaspoolt
 EXPOSE 80
 
 # Käivita peale virtuaalmasina loomist
