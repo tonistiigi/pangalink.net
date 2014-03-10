@@ -25,8 +25,8 @@
 <fieldset>
     <legend>Maksekorraldus</legend>
 
-    <form method="post" action="/final/<%= payment._id %>">
-
+    <form method="post" action="/final">
+    <input type="hidden" name="payment" value="<%= payment._id %>"/>
     <table>
 
         <% if(payment.editSenderName){%>
